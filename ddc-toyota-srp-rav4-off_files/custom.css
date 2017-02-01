@@ -1,0 +1,209 @@
+.badge.badge-in-transit { display: none; }
+.ddc-footer .navigation-default .toyota{display:none;}
+
+/* ddcebegnoche change stacking images in DEA */
+.content-default img {display:inline;}
+
+/* New Template - Condensed Header *
+.ddc-navbar-nav .ddc-nav > li > a, .ddc-navbar-nav .ddc-nav-inline > li > a {min-width: 110px;}
+
+
+/* New Template CSS */
+.ddc-header .ddc-container {background: url(//pictures.dealer.com/j/joemyerstoyotagst/1802/bcb04188f9eb480f252749f62f153d12x.jpg) no-repeat scroll 550px 0px}
+.ddc-header.shrink-header-nav .ddc-container {background: none;}
+
+.purecars-report img{max-height: 150px;}
+.changeheadercolor .ddc-header {background-color: #e70911;}
+.tels .tel .type, .tels .tel .separator{display:none !important;}
+.service-page-schedule { background: #e70911;  width: 280px;  display: block;  border-radius: 5px; -moz-border-radius: 5px;  color: #fff;  text-align: center;  padding: 14px 6px 14px 6px;  font-size: 1.25em;  font-weight: bold;  text-transform: uppercase;  box-shadow: 0 2px 6px #000;  text-decoration: none;  float: left;  margin: 0px 8px;}
+.ddc-form-group label, .ddc-form-group-container label { padding-right: 3px;}
+.hero-text{text-align:justify;}
+h3, .h3 {font-size: 16px;}
+.ddc-navbar-nav .inventory-featured-default .pricing .final-price .value {font-size: 180%; color: white;line-height: 1em;}
+.ddc-navbar-nav .inventory-featured-default .pricing {padding-top: 0px;}
+.ddc-mega-menu-nav .inventory-featured-default .hproduct {min-height: 240px;}
+
+
+/* Hide Payment Digital Retailing on Used Cars - BC (JS Dependant) */
+.digital-retailing-used-bc .dr-tab-navigation li:nth-child(2) {display:none;}
+.digital-retailing-used-bc dd[data-digital-retail-summary="payment"] {display: none !important;}
+.digital-retailing-used-bc dt[data-digital-retail-summary-label="payment"] {display: none;}
+
+/* Blog Style */
+.blog-post-list .entry-summary img{padding: 0 10px 0 0; width: 150px; border: 0px; float:left;}
+.entry-summary {clear: both;margin-bottom: 2px; text-align: justify;}
+.blog-post-detail .author {display:none;}
+.mod .hentry {margin-bottom: 7px;padding: 10px 0;border-bottom: 1px solid #c0c0c0;}
+.blog-post-detail a{color: #e70911; text-decoration:underline;}
+.blog-post-detail {font-size: 110%; text-align: justify;}
+.blog-post-detail h1{color: #e70911; text-transform: uppercase; font-size:120%;}
+.comments-listing{display:none;}
+.entry-content p{margin: 0 0 10px 0;}
+.blog-author-list{display:none;}
+
+
+/* Header Options */
+header .header-default .vcard .tel.phone1 .type { font-style: normal; font-weight: bold; text-decoration: none;}
+header .header-default .vcard .tel.phone1 .separator{font-style: normal; font-weight: bold; text-decoration: none;  }
+header .header-default .vcard .tel.phone1 .value { font-style: normal; font-weight: bold; text-decoration: none; }
+.ddc-header .header-default .vcard .adr a {}
+.ddc-header .header-default .vcard .adr { top: 0em;}
+.ddc-header .header-default .vcard .tels .tel {font-weight: bold;}
+
+/* New Inventory Phone BC*/
+.phone-call-box{background-color: #e70911; border: 1px solid #c3c3c3; text-align: center; width: 100%; padding: 15px 10px; font-size: 180%;font-weight: bold; letter-spacing: 2px;}
+.phone-call-box a, .phone-call-box a:hover{color: white; height: 100%; width: 100%}
+
+/* Dealer Socket Service Iframe - BC */
+.dealer-socket-service-frame{min-height: 800px; width:1024px; margin: 0 0 0 -42px; -webkit-transform: scale(0.91); transform: scale(0.91);}
+
+/* Gorilla Buttons */
+.gorilla { background:  #e70911; width: 280px; display: block; border-radius: 36px; -moz-border-radius: 36px; color: #fff; text-align: center; padding: 16px 6px 16px 6px; font-size: 1.25em; font-weight: bold; text-transform: uppercase; box-shadow: 0 2px 6px #000; text-decoration: none; float: left; margin: 16px 8px }
+.gorilla:hover { background:  #555; color: #fff }
+.gorilla.square { border-radius:0; -moz-border-radius: 0 }
+
+/* Custom Lease SRP - BC */
+.CustomLeaseSrp .inventoryList .pricing .abSub,.CustomLeaseSrp .inventoryList .pricing .rebate,.CustomLeaseSrp .inventoryList .pricing .final-price,.CustomLeaseSrp .inventoryList .pricing .internetPrice,.CustomLeaseSrp .inventoryList .pricing .stackedRebate,.CustomLeaseSrp .inventoryList .pricing .stackedFinal,.CustomLeaseSrp .inventoryList .pricing .stackedConditionalRebate,.CustomLeaseSrp .inventoryList .pricing .stackedConditionalFinal,.CustomLeaseSrp .inventoryList .pricing .paymentLoan {display:none !important;}
+.CustomLeaseSrp .inventoryList .pricing .msrp {display:inline !important;}
+
+.social-tabs{display:none}
+.ddc-form-group label, .ddc-form-group-container label { padding-right: 3px;}
+.ajax-navigation-element .blog-post-list.ddc-box-1{background: transparent;}
+
+/* New Pricing BC */
+.inv-type-new .internetPrice, .inventory-featured-default .internetPrice{display:none !important;}
+.inv-type-new .internetPrice.final-price, .inventory-featured-default .internetPrice.final-price{display:inline !important;}
+
+/* Homepage Featured */
+.index .inventory-featured-default-extension-1 .yui3-u-1-4 .hproduct {height: 300px;}
+.index .inventory-featured-default-extension-1 .yui3-u-1-4 .hproduct > div {height: 420px;}
+.index .inventory-featured-default-extension-1 .pricing.multiple-prices > li > span {display: inline;}
+.index .inventory-featured-default .pricing .abSub, .index .inventory-featured-default .pricing .rebate {border-bottom: 0px dotted black;}
+.index .inventory-featured-default .internetPrice .label {display: none;}
+.index .inventory-featured-default .internetPrice .value {display: none;}
+.index .inventory-featured-default .final-price .label {display:block;font-size: 120%;}
+.index .inventory-featured-default span.final-price span.value {display:block;font-size: 120%; color:black;}
+.index .inventory-featured-default .pricing .final-price .value, .index .inventory-featured-default .pricing .final .value {display:block;line-height: 2em;}
+
+
+/* Research CSS */
+.research-div{margin: 0 10px; text-align: justify; background: #fafafa;}
+.research-div p{margin-bottom:10px;}
+.research-div h2{width:90%; margin: 10px;}
+.research-div ul{margin-bottom:0px}
+.research-top{padding-left: 9px;}
+.research-tr{height: 11px;}
+.research-inner{padding-left: 10px;}
+.research-inner2{padding-right: 10px;}
+.research-hd2{background-image: none;}
+.research-bd{padding: 0 10px;}
+.research-bottom{padding-left: 9px;}
+.research-br{height:10px;}
+.research-div a{font-size:100%; font-weight:bold}
+
+
+/* Research Index Page */
+.link-div{width: 185px; height:185px; float: left; margin: 10px 5px; text-align: center; display: inline;}
+.link-name{font-size: 125%; display: block; font-weight: bold;}
+.link-image{display: block; width: 180px; border:0; height: 130px;}
+.linx a{font-size: 105%; display: block; font-weight: bold;}
+.link-div img{ background: none repeat scroll 0 0 #F2F2F2; box-shadow: 0 0 3px #555555; padding: 3px; margin-bottom: 3px} 
+.link-div img:hover{border-bottom: 2px solid #CE0030; margin-bottom: 1px}
+
+
+/* t11 - Quick Links and Widget Buttons  */
+#quick_link_wrap{ width: 100%; padding: 0px;}
+.quick_link{ background: #eee; padding: 8px 10px 8px 10px; text-align: left; border-top: none; border-left: 4px solid #e70911; width: 90%; margin-top: 4px  }
+.quick_link:hover{ background: #e70911; padding: 8px 10px 8px 10px; text-align: left; border-top: none; border-left: 4px solid #eee; width: 90%; margin-top: 4px }
+.quick_link:hover a{ color: #fff  }
+.quick_link a{ color: #444; font-weight: bold; text-decoration: none }
+.quick_link a:hover{ color: #fff; font-weight: bold; text-decoration: none }
+#quick_link_wrap h2{ background: #d9d9d9; width: 90%; color: #444; font-weight: normal; font-size: 16px; text-transform: uppercase; padding: 8px 10px 8px 10px; text-align: left; border-top: 2px solid #e70911 }
+.widget_button{ margin: 0 auto; background: #e70911; border-radius: 6px; text-align: center; margin-bottom: 6px; height: 50px; padding-top: 12px }
+.widget_button:hover { background: #c0c0c0; }
+a.widget_button{ color: #fff; text-decoration: none; font-weight: bold; font-size: 16px }
+
+
+/* t11 - Compare Page */
+#compare-sec { background: #000000;  border-radius: 4px 4px 4px 4px; margin: 0 auto; margin-bottom: 20px;  max-width: 578px; padding: 14px 0 22px; text-align: center; }
+#compare-sec img { width: 606px; margin-bottom: 20px }
+#compare-sec a.button { width: 100%; border-radius: 4px; padding: 12px; text-align: center; color: #fff !important; text-decoration: none !important; font-size: 16px; font-weight: bold } 
+#compare-sec a.button { background: #e70911;} 
+#compare-sec a.button:hover{ background: #fff; color: #222 !important; text-decoration: none !important }
+
+
+/* t11 - Service Page */
+#service-index .aside-none section.region { border-radius:0 }
+#service-index .container-page-title .doc h1 { display:NONE }
+#service-index .service h1 { background:#d4d4d4; color:#222; font-size:3em }
+#service-index .service h2 { background:#d4d4d4; color:#222; font-size:2em }
+#service-index .service h3 { background:#d4d4d4; color:#222; font-size:1.5em }
+#service-index .service-text { line-height:22px; padding:0 14px }
+#service-index .service-text p,.service-text span {font-size:1.1em!important }
+#service-index a.qlink {background:#444; border-radius:0; clear:both; color:#fff; display:block; font-size:20px; margin:0 0 6.5px; padding:21.4px 0; text-align:center; text-decoration:none; width:100% }
+#service-index a.qlink.red { background:rgb(95,116,134) }
+#service-index a.qlink.red:hover { background:#444 }
+#service-index a.qlink:hover { background:rgb(95,116,134); text-decoration:none }
+#service-index label.lg-service-bttn { clear:both; color:#fff; display:block; font-size:2em; margin:0; text-align:center; text-decoration:none; width:100% }
+#service-index label.lg-service-bttn:hover { text-decoration:none }
+#service-index .modal { background:rgba(0,0,0,.9); bottom:0; left:0; opacity:0; position:fixed; right:0; text-align:left; top:0; transition:opacity .25s ease; visibility:hidden }
+#service-index .modal__bg { bottom:0; cursor:pointer; left:0; position:absolute; right:0; top:0 }
+#service-index .modal-state { display:none }
+#service-index .modal-state:checked + .modal { opacity:1; visibility:visible; z-index:9999 }
+#service-index .modal-state:checked + .modal .modal__inner { top:0 }
+#service-index .modal__inner { background:#fff; border-radius:5px; bottom:0; height:80%; left:0; margin:auto; overflow:auto; padding:1em 2em; position:absolute; right:0; top:-10%; transition:top .25s ease; width:50%; z-index:9999 }
+#service-index .modal__close { cursor:pointer; height:20px; position:absolute; right:1em; top:1em; width:20px }
+#service-index .modal__close:after,.modal__close:before { background:#CC2C2C; color:#fff; content:'X'; display:block; font-weight:bold; height:20px; margin:-12px 0 0 -8px; padding:10px; position:absolute; text-align:center; top:0; transform:rotate(45deg); width:20px }
+#service-index .modal__close:hover:after,.modal__close:hover:before { background:#aaa }
+#service-index .modal__close:before { transform:rotate(-45deg) }
+#service-index body{font:1/1.5em sans-serif; padding:1%; text-align:center }
+#service-index .lg-service-bttn { color:#fff; cursor:pointer; display:inline-block }
+#service-index p img { float:left; height:auto; margin:0 1em 1em 0; max-width:200px }
+#service-index .coupon-block { margin:0 auto; padding: 20px 0 20px 0; width:100%; border-bottom: 1px solid #757782 }
+#service-index .coupon { background:#E7E7E7; box-shadow:0 1px 4px #444; max-width:100%; overflow:hidden; padding:6px; width:45.25% }
+#service-index .coupon img { max-width:100% }
+#service-index .coupon.l { float:left; margin:10px 0 10px 14px }
+#service-index .coupon.r { float:right; margin:10px 14px 10px 0 }
+#service-index .coupon.single { float:none; margin:0 auto }
+#service-index .coupon-head { background:#444; clear:both; color:#fff; margin-bottom:2px; overflow:hidden; padding:6px 0 6px 6px; width:100% }
+#service-index .coupon-head span.left { display:inline-block; float:left; width:10% }
+#service-index .coupon-head span.right { display:inline-block; float:left; font-size:12px; font-weight:bold; padding-top:2px }
+#service-index .coupon-mid { background:#fff; color:#fff; overflow:hidden; text-align:center; border:0; margin: 0px;}
+#service-index a.serv-button { -moz-transition:all .3s ease; -o-transition:all .3s ease; -webkit-transition:all .3s ease; background:#888; color:#fff; display:block; padding:6px 8px 6px 0; text-align:center; text-decoration:none; transition:all .3s ease; width:100% }
+#service-index a.serv-button:hover { -moz-transition:all .6s ease; -o-transition:all .6s ease; -webkit-transition:all .6s ease; background:#e70911; color:#fff; text-decoration:none; transition:all .6s ease }
+#service-index a.serv-button:hover > i.fa { color:#444 }
+#service-index i.fa { color:#fff }
+h2.service { background:#999; border-bottom:3px solid #c71633; color:#fff; font-size:2.5em; font-weight:700; padding:20px }
+#service-index .adr a, .vcard .fn { color: #757782 }
+#service-index span.org { font-size: 24px; font-weight: 500; display: block; padding: 18px 0; border-bottom: 1px solid #757782 }
+@media screen and max-width 768px {
+#service-index .modal__inner { box-sizing:border-box; height:90%; width:90% }
+}
+/* END SERVICE PAGE CSS*/
+
+/* t11 - Service Coupon Print Button */  
+.print_bttn { width: 120px; height: 30px; background: #B51840; padding: 8px; color: #fff; text-decoration: none; border-radius: 6px; margin-right: 32px }
+.print_bttn:hover, .print_bttn:link, .print-bttn:visited { text-decoration: none; color: #fff }
+.bottom-bar{ background: none !important; border: none !important; margin: 8px 0; }
+
+
+/* t11 MPP Page */
+.v11-mpp{display:inline-block;}
+.v11-mpp img{width: 250px; float: left; padding: 0 10px 0 0;}
+.v11-mpp p{text-align: justify}
+.v11-mpp .mpp-class{font-size: 110%; font-weight: bold; color: grey; display:none;}
+
+/* Custom Lease SRP - BC */
+.CustomLeaseSrp .inventoryList .pricing .abSub,.CustomLeaseSrp .inventoryList .pricing .rebate,.CustomLeaseSrp .inventoryList .pricing .final-price,.CustomLeaseSrp .inventoryList .pricing .internetPrice,.CustomLeaseSrp .inventoryList .pricing .stackedRebate,.CustomLeaseSrp .inventoryList .pricing .stackedFinal,.CustomLeaseSrp .inventoryList .pricing .stackedConditionalRebate,.CustomLeaseSrp .inventoryList .pricing .stackedConditionalFinal,.CustomLeaseSrp .inventoryList .pricing .paymentLoan {display:none !important;}
+.CustomLeaseSrp .inventoryList .pricing .msrp {display:inline !important;}
+
+/* ddcjonathana DNA4635937 */
+.customGridFv ul.pricing,
+.ddc-wrapper .inventory-featured-default.customGridFv .description,
+.inventory-featured-full-page.customGridFv .ddc-btn-block {width: 100%;}
+
+/*New Research Styles*/
+.researchStyles p {text-align:justify;}
+
+/*Position > on featured vehicle page*/
+.ddc-wrapper .inventory-featured-default .hproduct .view-link {position:relative;}

@@ -1,0 +1,332 @@
+/* move checkbox out of view */
+.facet-breadcrumb-field {
+	position: absolute;
+	width: 16px;
+	left:-99999px;
+}
+
+/* =fixes an issue in IE8-IE10 where when .disabled was preset on form.facet-breadcrumb-form, the breadcrumb labels and inputs were changing position. */
+.disabled .facet-breadcrumb-label input {
+	display:none;
+}
+
+/* FACET MULTI COMPONENT STYLES */
+
+/* Show more/less CSS hooks on JS for progressive enhancement */
+.js li.js-hide { display: none; }
+
+
+/** Trying to override some multi-variation css affecting radios and checkboxes in IE >= 9
+	Is not IE-specific, because technically, other browsers shouldn't be styled this way either, they just don't choke**/
+input.checkbox, input.radio {
+	padding:0;
+	box-shadow: none;
+}
+
+/* KHAN-175 */
+.panel-body > ul {padding-top:1px;}/* defines a layout container */
+
+/* Flot chart styles defaults */
+.facet-user-range-chart {
+	display: none;
+	color: #444444;
+	height: 120px;
+	margin: 20px 0 20px;
+	/* Bars */
+	border-top-color: #222222;
+	/* Bars (Highlighted) */
+	border-right-color: #000000;
+	/* Bars (Out of range) */
+	border-bottom-color: #cccccc;
+	/* Grid */
+	border-left-color: #777777;
+}
+
+.facet-user-range-chart-render {
+	display: block;
+	visibility: hidden;
+}
+
+.facet-user-range-chart-ready {
+	display: block;
+	visiblity: visible;
+}
+
+.facet-user-range-min {
+	float: left;
+	margin-right: 1%;
+}
+
+.facet-user-range-max{
+	float: right;
+	margin-left: 1%;
+}
+
+.facet-user-range-min span,
+.facet-user-range-max span {
+	display: none;
+}
+
+.facet-user-range-input-group {
+	text-align: center;
+	margin-bottom:6px;
+}
+
+.facet-user-range-input-group label {
+	padding-right: 0;
+	padding-left: 0;
+	font-weight: normal;
+	text-align: left;
+}
+
+.facet-user-range-input-group input.facetmulti-input {
+	padding: 6px 10px;
+	width: 75%;
+	text-align: left;
+}
+
+.facet-user-range-separator {
+	display: inline-block;
+	line-height:28px;
+}
+.facet-user-range-go-button {
+	float: right;
+}
+/* Accordion */
+
+/* Transition styles from Bootstrap */
+
+.collapse { display: none; }
+.collapse.in { display: block; }
+.collapsing { position: relative; height: 0; overflow: hidden; -webkit-transition: height 0.35s ease; transition: height 0.35s ease; }
+
+.facetmulti-collapse-toggle {
+	display: block;
+	cursor: pointer;
+}
+/* KHAN-160 fixes issue with collapsable facets snapping shut in v2 vlp integrations */
+.vlp-v2 .panel-body li {min-height:10px;}
+
+/* Range Slider Styles */
+.noUi-target,.noUi-target * {-webkit-touch-callout:none;-webkit-user-select:none;-ms-touch-action:none;-ms-user-select:none;-moz-user-select:none;-moz-box-sizing:border-box;box-sizing:border-box}
+.noUi-base{width:100%;height:100%;position:relative}
+.noUi-origin{position:absolute;right:0;top:0;left:0;bottom:0}
+.noUi-handle{position:relative;z-index:1}
+.noUi-stacking .noUi-handle{z-index:10}
+.noUi-stacking+.noUi-origin{*z-index:-1}
+.noUi-state-tap .noUi-origin{-webkit-transition:left .3s,top .3s;transition:left .3s,top .3s}
+.noUi-state-drag *{cursor:inherit!important}
+.noUi-dragable{cursor:w-resize}
+[disabled] .noUi-connect,[disabled].noUi-connect{background:#eee}
+[disabled] .noUi-handle{cursor:not-allowed}
+
+/* CUSTOM SLIDER STYLES */
+
+.facet-user-range-input-slider {
+	margin: 15px 0;
+}
+.touch .facet-user-range-input-slider {
+	margin-bottom: 30px;
+}
+
+.noUi-target{
+	border-radius:4px;
+	border:1px solid #ccc;
+}
+
+.noUi-horizontal.noUi-background { height:8px; border-radius: 4px; }
+.noUi-background, .noUi-connect { border-radius: 0; }
+.noUi-background {background:#fff;}
+
+
+.noUi-connect{ background-image:linear-gradient(to bottom, #ccc, #eee) }
+
+.noUi-origin.noUi-connect:before,
+.noUi-origin.noUi-background:after {
+	content:"";
+	display:block;
+	position:absolute;
+	top: -1px;
+	height:6px;
+	width:3px;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	background:#ddd;
+}
+
+.noUi-origin.noUi-connect:before { left: -3px; }
+.noUi-origin.noUi-background:after { left: 0; }
+
+.noUi-horizontal.noUi-extended { padding:0 20px }
+.touch .noUi-horizontal.noUi-extended { padding:0 38px }
+.noUi-horizontal.noUi-extended .noUi-origin { right:-18px }
+.touch .noUi-horizontal.noUi-extended .noUi-origin { right:-38px }
+
+.noUi-handle {
+	width:9px;
+	height:18px;
+	margin: -6px 0 0;
+	cursor: pointer;
+}
+
+.touch .noUi-handle {
+	width: 18px;
+	height: 36px;
+	margin-top: -15px;
+}
+
+
+.noUi-handle:after,.noUi-handle:before {
+	content:"";
+	display:block;
+	position:absolute;
+	height:0px;
+	width:0px;
+}
+
+/* left handle block */
+.noUi-handle-lower:before {
+	top: -9px;
+	left: -21px;
+	width: 12px;
+	height:17px;
+	background-color: #eee;
+	border: 1px solid #999;
+	border-right-width: 0;
+	border-top-left-radius:4px;
+	border-bottom-left-radius:4px;
+	box-shadow:inset 2px 0 4px #fff;
+	background-image:linear-gradient(to bottom, #fff, #fff 45%, #ddd 55%, #ddd);
+}
+.touch .noUi-handle-lower:before {
+	top: -18px;
+	left: -40px;
+	width: 20px;
+	height: 33px;
+	border-width: 2px 0 2px 2px;
+	border-top-left-radius:8px;
+	border-bottom-left-radius:8px;
+	box-shadow:inset 4px 0 8px #fff;
+}
+
+
+/* left handle point shadow */
+.noUi-handle-lower {
+	left: -9px;
+	height:19px;
+	border-bottom: 9px solid transparent;
+	border-left: 9px solid #666;
+	border-top: 9px solid transparent;
+}
+.touch .noUi-handle-lower {
+	left: -17px;
+	border-bottom-width: 18px;
+	border-left-width: 18px;
+	border-top-width: 18px;
+}
+
+
+/* left handle point */
+.noUi-handle-lower:after  {
+	top: -8px;
+	left: -9px;
+	height:1px;
+	border-bottom: 8px solid transparent;
+	border-left: 8px solid #eee;
+	border-top: 8px solid transparent;
+}
+.touch .noUi-handle-lower:after  {
+	top: -16px;
+	left: -18px;
+	border-bottom-width: 16px;
+	border-left-width: 16px;
+	border-top-width: 16px;
+}
+
+/* right handle point */
+.noUi-handle-upper:before  {
+	top: -8px;
+	right: -9px;
+	height:1px;
+	border-bottom: 8px solid transparent;
+	border-right: 8px solid #eee;
+	border-top: 8px solid transparent;
+}
+.touch .noUi-handle-upper:before  {
+	top: -16px;
+	right: -18px;
+	height:1px;
+	border-bottom-width: 16px;
+	border-right-width: 16px;
+	border-top-width: 16px;
+}
+/* right handle point shadow */
+.noUi-handle-upper {
+	right: 0px;
+	height:19px;
+	border-bottom: 9px solid transparent;
+	border-right: 9px solid #666;
+	border-top: 9px solid transparent;
+}
+.touch .noUi-handle-upper {
+	right: 1px;
+	border-bottom-width: 18px;
+	border-right-width: 18px;
+	border-top-width: 18px;
+}
+
+
+/* right handle block */
+.noUi-handle-upper:after {
+	top: -8px;
+	right: -22px;
+	width: 12px;
+	height: 16px;
+	background-color: #eee;
+	border: 1px solid #999;
+	border-left-width: 0;
+	border-top-right-radius:4px;
+	border-bottom-right-radius:4px;
+	box-shadow:inset -2px 0 4px #fff;
+	background-image:linear-gradient(to bottom, #fff, #fff 45%, #ddd 55%, #ddd);
+}
+.touch .noUi-handle-upper:after {
+	top: -18px;
+	right: -40px;
+	width: 20px;
+	height: 33px;
+	border-width: 2px 2px 2px 0;
+	border-top-right-radius:8px;
+	border-bottom-right-radius:8px;
+	box-shadow:inset -4px 0 8px #fff;
+}
+/* Active Colors (Default - should override in color theme) */
+.noUI-state-drag .noUi-handle-lower:after,
+.noUi-handle-lower:hover:after {
+	border-left-color: #333;
+}
+
+.noUI-state-drag .noUi-handle-lower:before,
+.noUi-handle-lower:hover:before,
+.noUI-state-drag .noUi-handle-upper:after,
+.noUi-handle-upper:hover:after {
+	background-color: #333;
+	background-image: none;
+	box-shadow: none;
+}
+
+.noUI-state-drag .noUi-handle-upper:before,
+.noUi-handle-upper:hover:before {
+	border-right-color: #333;
+}
+
+/* Support facet auto page scroll functionality */
+.facet-anchor {
+  position: relative;
+  top: 0;
+  display: block;
+  height: 0;
+}
+
+/* =Adjustments for Loan/Lease faceting search component*/
+.facet-swappable-group label { display:block; }

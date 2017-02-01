@@ -1,0 +1,28 @@
+/* ddcdanc fixes for template 11 Featured Vehicles, might need later adjustments for multiple pricing */
+.hotfixFeatured .description { min-height: 160px;}
+.hotfixFeatured h3 {min-height: 42px;}
+.hotfixFeatured .media {min-height: 250px;}
+.hotfixFeatured .hproduct .pricing {margin-bottom:0;}
+.hotfixFeatured .pricing {min-height:60px;}
+
+
+/* ddcdanc fixes for stretched buttons on the homepage */
+.hotfixIndexButtons .buttonblock_tall .buttonblock-img-wrap img { height: 100px; }
+.hotfixIndexButtons .buttonblock_tall li { height: 100px; }
+.hotfixIndexButtons .buttonblock_tall h4 { height: 100px; margin-top: -100px; }
+.hotfixIndexButtons .buttonblock_tall { height: 100px; }
+.hotfixIndexButtons .buttonblock_tall .cllcDefault h3 { margin-top: 25px; }
+
+/* ddcdanc fixes for specials - ddcrandyh added -moz- to box sizing, to cover firefox */
+.hotfixSpecials div.dsbid0008t02 img.photo { display: inline; }
+.hotfixSpecials div.dsbid0008t02 .layer0 { box-sizing: content-box;  -moz-box-sizing: initial; }
+
+/* ddcdanc fixes for odd sized images/streched images on VLP/VDP */
+.hotfixInventoryImages .imageViewer img { height: auto; }
+.hotfixInventoryImages .imageViewer { min-height: 0; }
+.hotfixInventoryImages .media img { height: auto; } 
+/* ddcdanc 9/13/14 edit: removed inventory-listing-default class since it's not needed (was causing issues with custom hotfix class) */
+
+/* ddcrandyh fixes for jcarousel image overlap on the vdp */
+.hotfixJcarouselVdp .jcarousel-container .jcarousel-item a img {  width: 106px;  } 
+ 

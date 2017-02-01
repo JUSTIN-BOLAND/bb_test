@@ -1,0 +1,57 @@
+/* DNA3503595 ddcbthyng */
+.header-default .now-hiring {position: absolute; right: 320px; top: 35px;}
+.header-default .now-hiring:hover img {opacity: .75;}
+
+
+.inventory-finder-lead .ddc-span10+input+.ddc-form-group {display:none;}
+
+/* DNA5082138 ddcjoshc */
+.inventoryList .inv-type-new .pricing .invoicePrice .label { font-size:14px ;font-weight: bold; }
+.inventoryList .inv-type-new .pricing .internetPrice .label { font-size:108%; }
+.inventory-detail-pricing .inv-type-new.pricing .invoicePrice .label { font-size:125%; font-weight: bold; }
+.inventory-detail-pricing .inv-type-new.pricing .internetPrice .label { font-size:18px; }
+
+/* Start 'vdp-new-price-label-final-price' (do not modify this line) */
+/* Modified by ddcjoshc on 06/02/16 10:39 AM EDT */
+.inventory-detail-pricing .inv-type-new.pricing .final-price .label { font-style: normal; font-weight: bold; text-decoration: none; font-size: 18px; color: #808285; }
+/* End 'vdp-new-price-label-final-price' (do not modify this line) */
+
+/* Start 'vdp-new-price-value-final-price' (do not modify this line) */
+/* Modified by ddcjoshc on 06/02/16 10:39 AM EDT */
+.inventory-detail-pricing .inv-type-new.pricing .final-price .price { font-style: normal; font-weight: bold; text-decoration: none; font-size: 16px; color: #000000; }
+/* End 'vdp-new-price-value-final-price' (do not modify this line) */
+
+/* Start 'vdp-new-price-value-invoicePrice' (do not modify this line) */
+/* Modified by ddcjoshc on 06/02/16 10:39 AM EDT */
+.inventory-detail-pricing .inv-type-new.pricing .invoicePrice .price { font-style: normal; font-weight: bold; text-decoration: none; font-size: 16px; color: #000000; }
+.inventory-detail-pricing .inv-type-new.pricing .invoicePrice .price:hover{ color: #000000; }
+/* End 'vdp-new-price-value-invoicePrice' (do not modify this line) */
+
+/* DNA5443213 ddcjoshc */
+.inventoryList .inv-type-new .pricing .internetPrice .value { font-size:.95em; }
+.inventoryList .inv-type-new .pricing .internetPrice .label { font-size:85%; }
+.inventoryList .inv-type-new .pricing .invoicePrice .value { font-size:122%; }
+
+/*ddcwilld DNA5458301*/
+.inventory-detail-pricing .inv-type-new.pricing .final-price .price {font-weight:normal; color:#808285; }
+.inventory-detail-pricing .inv-type-new.pricing .final-price .label {font-weight:normal; color:#808285; }
+.inventory-detail-pricing .inv-type-new.pricing .wholesalePrice .h1.price {font-weight:normal; color:#808285; }
+.inventory-detail-pricing .inv-type-new.pricing .askingPrice.final-price .h3.label {font-weight:normal; font-size:16px; }
+.inventoryList .pricing.multiple-prices.has-eprice.ddc-list-unstyled .wholesalePrice.final-price .label {font-weight:normal; font-size:14px; }
+.inventoryList .pricing.multiple-prices.has-eprice.ddc-list-unstyled .wholesalePrice.final-price .value {font-weight:normal; font-size:14px; color:#808285; }
+.inventoryList .pricing.multiple-prices.has-eprice.ddc-list-unstyled .invoicePrice .value {font-size:14px; }
+.inventoryList .pricing.multiple-prices.has-eprice.ddc-list-unstyled .wholesalePrice .value { font-weight:normal; color:#808285;}
+.inventoryList .pricing.multiple-prices.has-eprice.ddc-list-unstyled .askingPrice.final-price .value { font-weight:normal; font-size:14px; color:#808285; }
+.inventoryList .pricing.multiple-prices.has-eprice.ddc-list-unstyled .askingPrice.final-price .label { font-weight:normal; font-size:14px; color:#808285; }
+
+/* M-00193165 ddcjoshc */
+.inventory-featured-default.M-00193165 .pricing .askingPrice .value:before,.inventory-featured-default.M-00193165 .pricing .wholesalePrice .value:before,
+.inventory-detail-pricing .pricing.inv-type-new .askingPrice .price:before,.inventory-detail-pricing .pricing.inv-type-new .wholesalePrice .price:before,
+.inventoryList .inv-type-new .pricing .askingPrice .value:before,.inventoryList .inv-type-new .pricing .wholesalePrice .value:before { content:"-"; }
+
+/* 06962617 JLC */
+.inventory-detail-pricing li.max-insight,
+.inventoryList .pricing li.max-insight {display:none;}
+
+/* M-00211614 ddcjareds */
+.businessLinkLink {left: 169px; }

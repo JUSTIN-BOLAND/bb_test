@@ -1,0 +1,1 @@
+"use strict";!function(i){var n=new tracking.framework.config.Main(new tracking.framework.config.RuntimeBuilder(i,tracking.shift.configuration));n.execute()}(window);

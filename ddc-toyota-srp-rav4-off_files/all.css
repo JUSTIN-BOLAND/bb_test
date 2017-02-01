@@ -1,0 +1,29 @@
+/* DNA3000853 ddctimb */
+.inventory-listing-default-tx .hproduct {overflow:visible;}
+.ddstatus:hover {text-decoration:underline;}
+.ddstatus span + span {
+    background-color: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    color: #222222;
+    text-decoration: none;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 92%;
+    padding: 5px;
+    position: absolute;
+    width: 200px;
+    z-index:9999;
+}
+
+
+/* adding styles for non-gst templates */
+/* -- Custom Shared Vehicle Styling -- */
+.sharedVehicle .value span { position: absolute; width: 200px; padding: 5px; border: 1px solid; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px; font-size: 92%; }
+li.shared .pricing .dialog.pointer { display: none; }
+.page-bd.shared ul.pricing .ePrice, .page-bd.shared .mod.map-static { display: none; }
+/* -- Custom Shared Vehicle Hover Styling -- */
+.description .sharedVehicle span { color: #096991; text-decoration:underline; }
+.sharedVehicle .value span { background-color: #eee; border-color: #ccc; color: #222; text-decoration:none;}
+.sharedVehicle .value:hover {text-decoration:none; }
+
+/* DNA4548011 ddcbthyng */
+.v9-global-0011-v1.index .push {height: 100px;}

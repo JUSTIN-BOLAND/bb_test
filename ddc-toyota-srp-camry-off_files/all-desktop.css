@@ -1,0 +1,109 @@
+/* THIS ALSO PUSHES TO BHA SITES ON THE GSTPROFILE */
+
+/* DNA4501493 ddcryanp */
+.inventory-search-facetbrowse.hori-search {padding:15px 0 10px;background-color:#8F9397;margin:0px;}
+.inventory-search-facetbrowse.hori-search h3,
+.inventory-search-facetbrowse.hori-search .ddc-form-group.hide {display:none;}
+.inventory-search-facetbrowse.hori-search .ddc-form-group {width:10%;display:inline-block;margin:0 5px;}
+.inventory-search-facetbrowse.hori-search fieldset {text-align:center;}
+
+/* SLIDESHOW SEARCH */
+.index .custom-search .inventory-search-form,
+.index .custom-search .inventory-search-form .ddc-form-group + .ddc-form-group,
+.index .custom-search .inventory-search-form .ddc-form-group button {margin-bottom:0px;}
+.index .custom-search .inventory-search-form .ddc-form-group .ddc-span8 {margin-left:0px;width:100%;}
+.index .custom-search .inventory-search-form button {width:100%;padding:2px 0px;margin-bottom:30px;}
+.index .custom-search .inventory-search-facetbrowse .ddc-form-group {margin-bottom:3px;}
+.index .custom-search .inventory-search-facetbrowse h3.h1.ddc-heading-1 span {background:none transparent;margin-left:0px;padding-left:0px;}
+.index .custom-search .inventory-search-facetbrowse h3:before {border:0px;}
+.index .ddc-container.DNA4618779 {margin-top:20px;}
+.index .ddc-container.DNA4618779 .inventory-featured-default-extension-1 .yui3-u-1-3 .hproduct .media img {height:150px;}
+
+/* DEAL SECTION */
+.deal-section .content-default h3 {margin:20px 0 0;}
+.deal-section .links-list.car i {font-size:80px;width:auto;padding:0px;margin-top:-20px;background:none transparent;}
+.deal-section .links-list.three .mycars-signup {background:none;color:#000000;box-shadow:none;border:0px;position:absolute;right:-10px;top:-43px;}
+.deal-section .links-list.three .mycars-login {width:65%;}
+.deal-section .links-list h3 {font-size:21px;text-align:center;}
+.deal-section .links-list {height:370px;}
+.deal-section .links-list .ddc-nav {position:absolute;bottom:0px;width:100%;padding:10px 16px;left:0px;}
+.deal-section .ddc-span4 {border-right:1px solid rgba(190, 190, 190, 0.66);}
+.deal-section .ddc-span4:last-child {border:0px;}
+.ddc-composer .links-list.one,
+.ddc-composer .links-list.two,
+.ddc-composer .links-list.three {margin-top:80px;}
+.index .deal-section h3.h1.ddc-heading-2 {margin-top: 0;}
+
+/* FEATURED SECTION */
+.featured-section {margin-top:25px;padding-top:25px;padding-bottom:25px;background-color:#ffffff;}
+.featured-section .h1.ddc-heading-1 span{background-color:#ffffff;}
+.featured-section .h1.ddc-heading-1 {padding-bottom:3px;}
+.dealership-section.padding {padding-top:0px;}
+.featured-section .inventory-featured-default div.hproduct .view-link {position:absolute;}
+.featured-section .inventory-featured-default-extension-1 .description span,
+.featured-section .inventory-featured-tabbed .description span {line-height:1.3;}
+.featured-section .inventory-featured-default-extension-1 .yui3-u-1-3 .hproduct .media img {height:auto;}
+.featured-section .inventory-featured-default-extension-1 .yui3-u-1-3 .hproduct {height:190px;}
+.featured-section .inventory-featured-default-extension-1 .yui3-u-1-3 .hproduct > div.hover-state, 
+.featured-section .inventory-featured-default-extension-1 .yui3-u-1-3 .hproduct > div:hover {top:-180px;}
+.featured-section .inventory-featured-default-extension-1 .yui3-u-1-3 .hproduct > div {height:360px;}
+.featured-section .inventory-featured-default .pricing span.msrp.final-price span.value {color:#6c6c6c;font-size:1.3em;line-height:1;}
+.featured-section .inventory-featured-default .pricing .msrp .label {width:30%;display:inline;}
+.featured-section .inventory-featured-default .pricing span.msrp.final-price span.value {width:68%;display:inline;}
+
+/* FV fix */
+.ddc-wrapper .inventory-featured-default .description {width:55%;float:left;}
+.ddc-wrapper .inventory-featured-default .view-link {clear:both;}
+
+.ddc-mega-menu-nav .inventory-featured-default  .pricing .final-price .value, 
+.ddc-mega-menu-nav .inventory-featured-default  .pricing .final .value {line-height:1.2em;}
+
+.single-franchise.infiniti .ddc-navbar-nav .inventory-featured-default .hproduct .fn a {color:#ffffff;}
+
+/* VLP */
+.inventory-listing-default .inventoryList .ddc-btn[data-href*="eprice"] span {font-size:14px;}
+
+/* NAV */
+.compact.ddc-navbar-default .ddc-navbar-nav > li.currentPage > a:visited {color:#6c6c6c;}
+.compact.ddc-navbar-default .ddc-navbar-nav > li.currentPage > a:hover {color:#ffffff;}
+.compact.ddc-navbar-default .ddc-navbar-nav > li.nav-first a {font-size:25px;padding:4px 15px 5px;}
+
+/* HIDING SEARCH ON SKRINK */
+.ddc-header.sticky-header-nav.shrink-header-nav .inventory-search-form,
+.ddc-header.sticky-header-nav.shrink-header-nav ul.tels li.tel.phone1 span.type,
+.ddc-header.sticky-header-nav.shrink-header-nav ul.tels li.tel.phone1 span.separator {display:none;}
+
+/* IE FIX */
+.ie9 .ddc-header .inventory-search-form input[type="search"] {padding-bottom:0px;}
+
+/* DNA4548011 ddcbthyng */
+.index .push {height: 100px;}
+
+/* DNA4568761 ddcryanp */
+.single-franchise.infiniti .showroom-default .hproduct .fn span,
+.single-franchise.infiniti .inventoryList .hproduct .fn a,
+.single-franchise.infiniti .inventory-featured-default .hproduct .fn a {color:#000000;}
+
+/* DNA4575383 ddcbthyng */
+.pricing .paymentLoan .price.h1,
+.pricing .paymentLease .price.h1,
+.pricing .paymentLoan .value,
+.pricing .paymentLease .value {line-height: 1.3em;}
+
+/* DNA4623838 social footer fix */
+.ddc-footer > .social-header-buttons {display:none;}
+
+/* DNA4644233 ddcryanp */
+.ddc-wrapper .inventory-featured-default .hproduct {background-color:#fff;padding:10px;}
+.ddc-wrapper .inventory-featured-default .hproduct .view-link {position:static;width:100%;} /* ddcjonathana DNA4660685 specificked! */
+.ddc-wrapper .inventory-featured-default .pricing,
+.ddc-wrapper .inventory-featured-default .description {width:100%;float:none;margin:0px;clear:both}
+
+/* DNA4658596 ddcdrewc */
+.blog-post-list .view-link {float:right}
+
+/* DNA4690705 ddcryanp */
+.ddc-header .inventory-search-form .ddc-form-group:last-child {position:absolute;}
+
+/* US44934 */
+.ddc-mega-menu-nav .inventory-featured-default .hproduct .description {clear:both}

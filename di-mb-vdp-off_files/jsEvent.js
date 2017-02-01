@@ -1,0 +1,1 @@
+var collservetargetElement = document.getElementById('collserveScriptElement');if(collservetargetElement)collservetargetElement.responseReceived = true;

@@ -1,0 +1,9 @@
+/* modified ddchenryl  M-00203728 */ 
+/* vlp styling */ 
+.inventory-listing-default .custom_auto_saver img, .inventory-listing-default .customwork-autosaver-icon img {width: 132px;}
+.inventory-listing-default .custom_auto_saver a, .inventory-listing-default .customwork-autosaver-icon a {float: right;} 
+.inventory-listing-default .custom_auto_saver, .inventory-listing-default .customwork-autosaver-icon {margin: 5px 0; display:block; overflow: auto;}
+/* vdp styling */ 
+.inventory-detail-pricing .pricing li.custom_auto_saver, .vdp .customwork-autosaver-icon  {display: block; width: 100%; margin: 0 auto;}
+.inventory-detail-pricing .pricing li.custom_auto_saver a, .vdp .customwork-autosaver-icon a {display: block;width: 100%; clear: both; margin: 10px auto;} 
+.inventory-detail-pricing .pricing li.custom_auto_saver img, .vdp .customwork-autosaver-icon img {display: block; margin: 0 auto;}

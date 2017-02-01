@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'DDC Heading Font Face';
+  src: url('/v9/media/fonts/open-sans-regular/v1/webfont.eot');
+  src: url('/v9/media/fonts/open-sans-regular/v1/webfont.eot?#iefix') format('embedded-opentype'), url('/v9/media/fonts/open-sans-regular/v1/webfont.ttf') format('truetype'), url('/v9/media/fonts/open-sans-regular/v1/webfont.woff') format('woff'), url('/v9/media/fonts/open-sans-regular/v1/webfont.svg#OpenSansRegular') format('svg');
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'DDC Heading Font Face';
+  src: url('/v9/media/fonts/open-sans-regular-bold/v1/webfont.eot');
+  src: url('/v9/media/fonts/open-sans-regular-bold/v1/webfont.eot?#iefix') format('embedded-opentype'), url('/v9/media/fonts/open-sans-regular-bold/v1/webfont.ttf') format('truetype'), url('/v9/media/fonts/open-sans-regular-bold/v1/webfont.woff') format('woff'), url('/v9/media/fonts/open-sans-regular-bold/v1/webfont.svg#OpenSansRegularBold') format('svg');
+  font-weight: 800;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'DDC Heading Font Face';
+  src: url('/v9/media/fonts/open-sans-condensed/v1/webfont.eot');
+  src: url('/v9/media/fonts/open-sans-condensed/v1/webfont.eot?#iefix') format('embedded-opentype'), url('/v9/media/fonts/open-sans-condensed/v1/webfont.ttf') format('truetype'), url('/v9/media/fonts/open-sans-condensed/v1/webfont.woff') format('woff'), url('/v9/media/fonts/open-sans-condensed/v1/webfont.svg#OpenSansCondensed') format('svg');
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'DDC Heading Font Face';
+  src: url('/v9/media/fonts/open-sans-condensed-bold/v1/webfont.eot');
+  src: url('/v9/media/fonts/open-sans-condensed-bold/v1/webfont.eot?#iefix') format('embedded-opentype'), url('/v9/media/fonts/open-sans-condensed-bold/v1/webfont.ttf') format('truetype'), url('/v9/media/fonts/open-sans-condensed-bold/v1/webfont.woff') format('woff'), url('/v9/media/fonts/open-sans-condensed-bold/v1/webfont.svg#OpenSansCondensedBold') format('svg');
+  font-weight: 700;
+  font-style: normal; }

@@ -1,0 +1,11 @@
+.calculator-mpg table { width: 100%; }
+.calculator-mpg td { padding-left: 5px; }
+.calculator-mpg tr { line-height: 2; }
+.calculator-mpg tr.odd { background-color: #EEF2F5; }
+
+.calculator-mpg tr.active td,
+.calculator-mpg tr.odd .active td { background-color: #FEEA91; }
+
+.calculator-mpg th.active,
+.calculator-mpg th.active td { background-color: #FEEA91; }
+.calculator-mpg td.active { background-color: #FEEA91; }

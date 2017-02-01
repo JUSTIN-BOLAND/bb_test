@@ -1,0 +1,228 @@
+[class*="cn-icon-"] {
+  display: inline-block;
+  background-image: url(https://d29f71cuc8ityh.cloudfront.net/images2/icons/icons-darkgray.png);
+  background-size: 576px 528px;
+  background-position: 2000px 2000px;
+  height:32px;
+  width:32px;
+  margin: 0;
+  padding: 0;
+  vertical-align:top;
+}
+[class*="cn-icon-24-"] {
+  background-size: 432px 396px;
+  background-position: 2000px 2000px;
+  height:24px;
+  width:24px;
+}
+[class*="cn-icon-16-"] {
+  background-size: 288px 264px;
+  background-position: 2000px 2000px;
+  height:16px;
+  width:16px;
+}
+.cn-icon-blue {
+  background-image: url(https://d29f71cuc8ityh.cloudfront.net/images2/icons/icons-blue.png);
+}
+.cn-icon-light-gray {
+  background-image: url(https://d29f71cuc8ityh.cloudfront.net/images2/icons/icons-lightgray.png);
+}
+.cn-icon-white {
+  background-image: url(https://d29f71cuc8ityh.cloudfront.net/images2/icons/icons-white.png);
+}
+.cn-icon-red {
+  background-image: url(https://d29f71cuc8ityh.cloudfront.net/images2/icons/icons-red.png);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 240dpi) {
+  .stars {
+    background-image: url(https://d29f71cuc8ityh.cloudfront.net/images2/icons/stars@2x.png);
+  }
+  .cn-icon-mute {
+    background-image: url(https://d29f71cuc8ityh.cloudfront.net/images2/icons/icon_mute@2x.png);
+  }
+  .cn-icon-unmute {
+    background-image: url(https://d29f71cuc8ityh.cloudfront.net/images2/icons/icon_unmute@2x.png);
+  }
+}
+.cn-icon-blank { background-position: 2000px 2000px; }
+.cn-icon-home { background-position: 0 0; }
+.cn-icon-menu { background-position: -48px 0; }
+.cn-icon-settings { background-position: -96px 0; }
+.cn-icon-user { background-position: -144px 0; }
+.cn-icon-action { background-position: -192px 0; }
+.cn-icon-comment-bubble { background-position: -240px 0; }
+.cn-icon-circle-info { background-position: -288px 0; }
+.cn-icon-x { background-position: -336px 0; }
+.cn-icon-circle-x { background-position: -384px 0; }
+.cn-icon-double-left-arrow { background-position: 0 -48px; }
+.cn-icon-left-arrow { background-position: -48px -48px; }
+.cn-icon-start { background-position: -96px -48px; }
+.cn-icon-pencil { background-position: -144px -48px; }
+.cn-icon-trash { background-position: -192px -48px; }
+.cn-icon-tick { background-position: -240px -48px; }
+.cn-icon-circle-tick { background-position: -288px -48px; }
+.cn-icon-refresh { background-position: -336px -48px; }
+.cn-icon-circle-down-arrow { background-position: -384px -48px; }
+.cn-icon-right-arrow { background-position: -432px -48px; }
+.cn-icon-inbox { background-position: 0 -96px; }
+.cn-icon-feed { background-position: -48px -96px; }
+.cn-icon-star { background-position: -96px -96px; }
+.cn-icon-plus { background-position: -144px -96px; }
+.cn-icon-thumbs-up { background-position: -192px -96px; }
+.cn-icon-thumbs-down { background-position: -240px -96px; }
+.cn-icon-review { background-position: -288px -96px; }
+.cn-icon-video { background-position: -336px -96px; }
+.cn-icon-search { background-position: -384px -96px; }
+.cn-icon-eye { background-position: -432px -96px; }
+.cn-icon-car { background-position: 0 -144px; }
+.cn-icon-garage { background-position: -48px -144px; }
+.cn-icon-brand { background-position: -96px -144px; }
+.cn-icon-dealer { background-position: -144px -144px; }
+.cn-icon-compare { background-position: -192px -144px; }
+.cn-icon-engine { background-position: -240px -144px; }
+.cn-icon-shift { background-position: -288px -144px; }
+.cn-icon-drivetrain { background-position: -336px -144px; }
+.cn-icon-tag { background-position: -384px -144px; }
+.cn-icon-horsepower { background-position: -432px -144px; }
+.cn-icon-gas-station { background-position: -480px -144px; }
+.cn-icon-facebook { background-position: 0 -192px; }
+.cn-icon-twitter { background-position: -48px -192px; }
+.cn-icon-chat { background-position: 0 -240px; }
+.cn-icon-chat-dots { background-position: -48px -240px; }
+.cn-icon-chat-plus { background-position: -96px -240px; }
+.cn-icon-chat-sessions { background-position: -144px -240px; }
+.cn-icon-send-mobile { background-position: -192px -240px; }
+.cn-icon-new-request { background-position: -240px -240px; }
+.cn-icon-shortcut { background-position: -288px -240px; }
+.cn-icon-profile { background-position: 0 -288px; }
+.cn-icon-stats { background-position: -48px  -288px; }
+.cn-icon-phone { background-position: -96px -288px; }
+.cn-icon-mobile { background-position: -144px -288px; }
+.cn-icon-speedometer { background-position: -192px -288px; }
+.cn-icon-lib { background-position: 0 -336px; }
+.cn-icon-add-lib { background-position: -48px -336px; }
+.cn-icon-inventory { background-position: -96px -336px; }
+.cn-icon-deals { background-position: -144px -336px; }
+
+.cn-icon-24-blank { background-position: 2000px 2000px; }
+.cn-icon-24-home { background-position: 0 0; }
+.cn-icon-24-menu { background-position: -36px 0; }
+.cn-icon-24-settings { background-position: -72px 0; }
+.cn-icon-24-user { background-position: -108px 0; }
+.cn-icon-24-action { background-position: -144px 0; }
+.cn-icon-24-comment-bubble { background-position: -180px 0; }
+.cn-icon-24-circle-info { background-position: -216px 0; }
+.cn-icon-24-x { background-position: -252px 0; }
+.cn-icon-24-circle-x { background-position: -288px 0; }
+.cn-icon-24-double-left-arrow { background-position: 0 -36px; }
+.cn-icon-24-left-arrow { background-position: -36px -36px; }
+.cn-icon-24-start { background-position: -72px -36px; }
+.cn-icon-24-pencil { background-position: -108px -36px; }
+.cn-icon-24-trash { background-position: -144px -36px; }
+.cn-icon-24-tick { background-position: -180px -36px; }
+.cn-icon-24-circle-tick { background-position: -216px -36px; }
+.cn-icon-24-refresh { background-position: -252px -36px; }
+.cn-icon-24-circle-down-arrow { background-position: -288px -36px; }
+.cn-icon-24-right-arrow { background-position: -324px -36px; }
+.cn-icon-24-inbox { background-position: 0 -72px; }
+.cn-icon-24-feed { background-position: -36px -72px; }
+.cn-icon-24-star { background-position: -72px -72px; }
+.cn-icon-24-plus { background-position: -108px -72px; }
+.cn-icon-24-thumbs-up { background-position: -144px -72px; }
+.cn-icon-24-thumbs-down { background-position: -180px -72px; }
+.cn-icon-24-review { background-position: -216px -72px; }
+.cn-icon-24-video { background-position: -252px -72px; }
+.cn-icon-24-search { background-position: -288px -72px; }
+.cn-icon-24-eye { background-position: -324px -72px; }
+.cn-icon-24-car { background-position: 0 -108px; }
+.cn-icon-24-garage { background-position: -36px -108px; }
+.cn-icon-24-brand { background-position: -72px -108px; }
+.cn-icon-24-dealer { background-position: -108px -108px; }
+.cn-icon-24-compare { background-position: -144px -108px; }
+.cn-icon-24-engine { background-position: -180px -108px; }
+.cn-icon-24-shift { background-position: -216px -108px; }
+.cn-icon-24-drivetrain { background-position: -252px -108px; }
+.cn-icon-24-tag { background-position: -288px -108px; }
+.cn-icon-24-horsepower { background-position: -324px -108px; }
+.cn-icon-24-gas-station { background-position: -360px -108px; }
+.cn-icon-24-facebook { background-position: 0 -144px; }
+.cn-icon-24-twitter { background-position: -36px -144px; }
+.cn-icon-24-chat { background-position: 0 -180px; }
+.cn-icon-24-chat-dots { background-position: -36px -180px; }
+.cn-icon-24-chat-plus { background-position: -72px -180px; }
+.cn-icon-24-chat-sessions { background-position: -108px -180px; }
+.cn-icon-24-send-mobile { background-position: -144px -180px; }
+.cn-icon-24-new-request { background-position: -180px -180px; }
+.cn-icon-24-shortcut { background-position: -216px -180px; }
+.cn-icon-24-profile { background-position: 0 -216px; }
+.cn-icon-24-stats { background-position: -36px  -216px; }
+.cn-icon-24-phone { background-position: -72px -216px; }
+.cn-icon-24-mobile { background-position: -108px -216px; }
+.cn-icon-24-speedometer { background-position: -144px -216px; }
+.cn-icon-24-lib { background-position: 0 -252px; }
+.cn-icon-24-add-lib { background-position: -36px -252px; }
+.cn-icon-24-inventory { background-position: -72px -252px; }
+.cn-icon-24-deals { background-position: -108px -252px; }
+.cn-icon-24-colors { background-position: -144px -216px; }
+
+.cn-icon-16-blank { background-position: 2000px 2000px; }
+.cn-icon-16-home { background-position: 0 0; }
+.cn-icon-16-menu { background-position: -24px 0; }
+.cn-icon-16-settings { background-position: -48px 0; }
+.cn-icon-16-user { background-position: -72px 0; }
+.cn-icon-16-action { background-position: -96px 0; }
+.cn-icon-16-comment-bubble { background-position: -120px 0; }
+.cn-icon-16-circle-info { background-position: -144px 0; }
+.cn-icon-16-x { background-position: -168px 0; }
+.cn-icon-16-circle-x { background-position: -192px 0; }
+.cn-icon-16-double-left-arrow { background-position: 0 -24px; }
+.cn-icon-16-left-arrow { background-position: -24px -24px; }
+.cn-icon-16-start { background-position: -48px -24px; }
+.cn-icon-16-pencil { background-position: -72px -24px; }
+.cn-icon-16-trash { background-position: -96px -24px; }
+.cn-icon-16-tick { background-position: -120px -24px; }
+.cn-icon-16-circle-tick { background-position: -144px -24px; }
+.cn-icon-16-refresh { background-position: -168px -24px; }
+.cn-icon-16-circle-down-arrow { background-position: -192px -24px; }
+.cn-icon-16-right-arrow { background-position: -216px -24px; }
+.cn-icon-16-inbox { background-position: 0 -48px; }
+.cn-icon-16-feed { background-position: -24px -48px; }
+.cn-icon-16-star { background-position: -48px -48px; }
+.cn-icon-16-plus { background-position: -72px -48px; }
+.cn-icon-16-thumbs-up { background-position: -96px -48px; }
+.cn-icon-16-thumbs-down { background-position: -120px -48px; }
+.cn-icon-16-review { background-position: -144px -48px; }
+.cn-icon-16-video { background-position: -168px -48px; }
+.cn-icon-16-search { background-position: -192px -48px; }
+.cn-icon-16-eye { background-position: -216px -48px; }
+.cn-icon-16-car { background-position: 0 -72px; }
+.cn-icon-16-garage { background-position: -24px -72px; }
+.cn-icon-16-brand { background-position: -48px -72px; }
+.cn-icon-16-dealer { background-position: -72px -72px; }
+.cn-icon-16-compare { background-position: -96px -72px; }
+.cn-icon-16-engine { background-position: -120px -72px; }
+.cn-icon-16-shift { background-position: -144px -72px; }
+.cn-icon-16-drivetrain { background-position: -168px -72px; }
+.cn-icon-16-tag { background-position: -192px -72px; }
+.cn-icon-16-horsepower { background-position: -216px -72px; }
+.cn-icon-16-gas-station { background-position: -240px -72px; }
+.cn-icon-16-facebook { background-position: 0 -96px; }
+.cn-icon-16-twitter { background-position: -24px -96px; }
+.cn-icon-16-chat { background-position: 0 -120px; }
+.cn-icon-16-chat-dots { background-position: -24px -120px; }
+.cn-icon-16-chat-plus { background-position: -48px -120px; }
+.cn-icon-16-chat-sessions { background-position: -72px -120px; }
+.cn-icon-16-send-mobile { background-position: -96px -120px; }
+.cn-icon-16-new-request { background-position: -120px -120px; }
+.cn-icon-16-shortcut { background-position: -144px -120px; }
+.cn-icon-16-profile { background-position: 0 -144px; }
+.cn-icon-16-stats { background-position: -24px  -144px; }
+.cn-icon-16-phone { background-position: -48px -144px; }
+.cn-icon-16-mobile { background-position: -72px -144px; }
+.cn-icon-16-speedometer { background-position: -96px -144px; }
+.cn-icon-16-lib { background-position: 0 -168px; }
+.cn-icon-16-add-lib { background-position: -24px -168px; }
+.cn-icon-16-inventory { background-position: -48px -168px; }
+.cn-icon-16-deals { background-position: -72px -168px; }

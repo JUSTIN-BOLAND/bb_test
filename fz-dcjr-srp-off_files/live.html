@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- saved from url=(0100)https://app.carnow.com/chat/live?key=J3ImLFLBaEBfFoKc5Lng5yHn2t8tKK6nuy10wkayeIKjH8Gy&uvid=143330853 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Live</title>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="1vDllAsfABY7nTtIaxutIsqjXi/d6PCvr0GGx+bB4rc=" name="csrf-token">
+<meta name="robots" content="nofollow">
+<script>var cnChatX, parentWindow, parentOrigin, pokeMode = true, usersLoaded = false, connStatus = 0, awayTimeout = null;</script>
+  <script src="./cnp-z-1484106470.js.gz" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+  <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if IE 9]>
+  <script src="https://d29f71cuc8ityh.cloudfront.net/js2/strophe.xdomainrequest.js?1.1.3" type="text/javascript"></script>
+  <![endif]-->
+<script>
+$( document ).ajaxSend(function( event, jqxhr, settings ) {
+  jqxhr.setRequestHeader('CN-Vst-ID', 143330853);
+});  
+$(document).ready(function() {
+  cnChatX = new CNChatPk("https://tigase1.carnow.com:80/", "wss://cnc.carnow.com:443/", "https://app.carnow.com", false, 143330853, false);
+  if (window.addEventListener) {
+    window.addEventListener("message", function(event) {
+      cnLiveMessageEvent(event);
+    }, false);
+  } else if (window.attachEvent) {
+    window.attachEvent("onmessage", function(event) {
+      cnLiveMessageEvent(event);
+    });
+  }
+});
+function cnLiveMessageEvent(event) {
+  cnLogSvc.log( 9, 'LIVE_cnLiveMessageEvent', event.data);
+  if (event.data == "enable") {
+    parentWindow = event.source;
+    parentOrigin = event.origin;
+    cnChatX.pluginWindow = parentWindow;
+    cnChatX.pluginOrigin = parentOrigin;
+    if (!cnChatX.isConnected()) {
+      cnChatX.connect();
+    }
+  } else {
+    var json = JSON.parse(event.data);
+    if (json.type == "session") {
+      if (pokeMode) {
+        if (connStatus == 0) {
+          connStatus = 2;
+          if (!cnChatX.isConnected()) {
+            cnChatX.logout();
+          }
+          $.ajax({
+            url: window.location.href + "&check=1",
+            success: function(data) {
+              cnLogSvc.log( 5, 'LIVE_cnLiveMessageEvent', "Switching to live CNChatX");
+              cnChatX = new CNChatX("https://tigase1.carnow.com:80/", "wss://cnc.carnow.com:443/", "https://app.carnow.com");
+              cnChatX.pluginWindow = parentWindow;
+              cnChatX.pluginOrigin = parentOrigin;
+              cnChatX.isCustomer = true;
+              cnChatX.chatSessionId = json.id;
+              cnChatX.popupState = 1;
+              cnChatX.multiSessions = false;
+              cnChatX.connect();
+              connStatus = 1;
+              pokeMode = false;
+            }
+          })
+        }
+      } else {
+        if (!cnChatX.isConnected()) {
+          cnChatX.connect();
+        }
+      }
+      cnChatX.chatSessionId = json.id;
+    } else if (json.type == "popup-open") {
+      cnChatX.popupState = 1;
+      if (awayTimeout) {
+        clearTimeout(awayTimeout);
+      }
+    } else if (json.type == "popup-closed") {
+      cnChatX.popupState = 0;
+      cnChatX.ts = new Date().getTime();
+      awayTimeout = setTimeout(function() {
+        CN.updateVisitorStatus(143330853, 2);
+      }, 2000);
+    } else if (json.type == "popup-blurred") {
+      cnChatX.popupState = 2;
+      cnChatX.ts = new Date().getTime();
+    } else if (json.type == "mute") {
+      CN.muted = true;
+    } else if (json.type == "unmute") {
+      CN.muted = false;
+    } else if (json.type == "tracking") {
+      $.ajax({
+        url: "/reports/tracking?" + json.params
+      });
+    } else if (json.type == "frame-closed") {
+        cnChatX.popupState = 0;
+        cnChatX.ts = new Date().getTime();
+    }
+  }
+}
+window.onbeforeunload = function (e) {
+  CN.updateVisitorStatus(143330853, 0);
+};
+window.addEventListener("pagehide", function() {
+  if (cnChatX.popupState == 0) {
+    CN.updateVisitorStatus(143330853, 0);
+  }
+}, false);
+</script>
+</head>
+<body>
+<audio style="display: none;height:0;width:0;" id="chat_sound_new_request">
+  <source src="https://d29f71cuc8ityh.cloudfront.net/sounds/new_chat_request.mp3" type="audio/mp3">
+</audio>
+<audio style="display: none;height:0;width:0;" id="chat_sound_new_message">
+  <source src="https://d29f71cuc8ityh.cloudfront.net/sounds/new_chat_message.mp3" type="audio/mp3">
+</audio>
+<audio style="display: none;height:0;width:0;" id="chat_sound_new_red_alert">
+  <source src="https://d29f71cuc8ityh.cloudfront.net/sounds/new_chat_request1.mp3" type="audio/mp3">
+</audio>
+
+
+</body></html>

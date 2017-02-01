@@ -1,0 +1,51 @@
+/* ddcdannyd, ddcbthyng */
+.googletranslate-header-container img {display:inherit;}
+
+/* DNA3742255 ddcbthyng */
+.hideDesktop {display: none;}
+
+/* ddckylej DNA3503595 */
+.vdp .inventory-detail-pricing .mycars-vdp .yui3-g {width:50%; float:left; margin-right:12px}
+.vdp .inventory-detail-pricing .mycars-vdp .yui3-g .yui3-u-1-2 .mycars-btn {width:122px; color:#000000;}
+.vdp .inventory-detail-pricing .mycars-vdp .yui3-g .yui3-u-1-2 .mycars-btn:hover{background-color:#FFFFFF;}
+.vdp .inventory-detail-callout .align-center {width:100%; text-align: center;}
+.vdp .inventory-detail-callout .align-center img {display:block; margin:0 auto; width: auto;}
+
+/* DNA3503595 ddcbthyng */
+#DTSuiteModal {z-index: 9990!important;}
+
+/* DNA3643018 ddcbthyng */
+.blog-post-detail .entry-content,
+.blog-post-list .entry-summary {word-break: normal;}
+
+/* OFF SITE VLP BANNER FOR HENDRICK */
+.inventory-listing-default .inventoryList .offSiteInventoryBanner {background: none #4593D3; padding: 5px 10px; color: #ffffff;}
+.inventory-listing-default .inventoryList .offSiteInventoryBanner p {margin: 0;}
+
+/* DNA3975104 ddcbthyng  - VDP STYLING FOR G1A */
+.vdp .inventory-detail-quick-specs.g1a .final-price {display: none;}
+
+/* DNA3503595 ddcbthyng */
+.commercial select {width: 95%;}
+
+/* ddckylej DNA3503595 */
+.inventory-detail-packages-options.max-height-none { max-height: 4000px !important;}
+
+/* ddcjcharron */
+.header-default .chryslerCapital-link {position:absolute;right:0;top:104px;}
+.header-default .chryslerCapital-link:hover {opacity:.75;filter:alpha(opacity=75);}
+
+/* DNA4388028 ddcbthyng */
+#military_bonus .hoverTrigger {position: relative; margin-bottom: 20px;}
+#military_bonus .hoverTrigger .hoverText {display: none;}
+#military_bonus .hoverTrigger:hover .hoverText {display: block; font-size: 80%; background: none #ffffff; position: absolute; width: 300px; top: -10px; left: 95px; padding: 10px; box-shadow: 0 0 5px #000000; border-radius: 6px; color: black;}
+
+/* M-00193935 ddcrandyh */
+.quick-specs .final-price .ddc-icon { font-family: 'ddc-icons'; }
+
+/* M-00197072 william.thompson */
+.quick-specs .final-price .dollar-sign { top: 0px; left: 0px; }
+
+/* M-00197206 ddcrandyh */
+.vdp .inventory-detail-quick-specs .quick-specs .final-price .ddc-icon-tag-money::before {content: "\e6ba";} 
+.vdp .inventory-detail-quick-specs .quick-specs .final-price .dollar-sign { top: 0px; left: -5px; }

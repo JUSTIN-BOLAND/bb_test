@@ -1,0 +1,15 @@
+/* DNA4512877 ddcdrewc */
+.digital-retailing-trigger {font-size:16px;color:#ff0000;top:-43px;}
+.digital-retailing-trigger .dr-open .ddc-icon {bottom:-23px;}
+
+/* DNA4535176 ddcdrewc -- I HATE THIS SOLUTOIN */
+.ddc-header .tels .type,
+.ddc-header .header-default .vcard .tels .separator {display:none;}
+.ddc-header .header-default .vcard .tels .tel {font-size:200% !important;font-weight:bold;}
+
+/* DNA4535761 ddcdrewc */
+.ddc-header.compact .header-default {overflow:visible;}
+.ddc-header.compact .inventory-search-form {bottom:27px;}
+
+/* DNA4629331 ddcdrewc */
+.video-gallery .yui3-u-1-5 {float:none;display:inline-block;vertical-align:top;width:19%;}

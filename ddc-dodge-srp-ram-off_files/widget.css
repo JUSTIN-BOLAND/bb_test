@@ -1,0 +1,16 @@
+.inventory-listing-default .ui-button.submit-search { display: none; }
+.inventory-listing-default .inventoryList li:hover { cursor: pointer; }
+
+.inventory-listing-default .suggested-search{margin:0 0 20px 0;}
+.inventory-listing-default .suggested-search .showing{margin:0 20px 0 0;}
+.inventory-listing-default .suggested-search .term{font-weight:bold;font-style:italic;}
+.inventory-listing-default .suggested-search .redo{}
+.inventory-listing-default .suggested-search .redo-link{font-weight:bold;font-style:italic;}
+.inventory-listing-default .stockNum { width: 100%; }
+.inventory-listing-default .stockNum input { float: left; width: 100%;}
+
+.inventoryList.grid > li.offSiteInventoryBanner{float:left; clear:left; width:100%; min-height:auto;}
+.inventory-listing-default .inventoryList li.offSiteInventoryBanner{background:#4593D3;}
+.inventory-listing-default .inventoryList li.offSiteInventoryBanner:hover{background:#4593D3;cursor:default;}
+.inventory-listing-default .inventoryList li.offSiteInventoryBanner p{color:#fff;}
+.inventory-listing-default .inventoryList .sister-tech{margin-top: 10px;display: inline-block;}

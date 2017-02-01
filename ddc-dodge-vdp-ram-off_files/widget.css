@@ -1,0 +1,32 @@
+.imageViewerScrollWrap { position: absolute; }
+.imageViewerScrollWrap>a { cursor: pointer; font-weight: bold; color: black; }
+
+/* JIRA-26552 */
+.imageViewerScrollWrap .imageScrollPrev,
+.imageViewerScrollWrap .imageScrollNext { z-index: 2; position: relative; }
+.imageViewer .ui-icon-zoomin { z-index: 3; position: relative; }
+
+.imageViewerScrollWrap>a.imageScrollPrev:hover,
+.imageViewerScrollWrap>a.imageScrollPrev.alwayson { background-position: 5% 50%; }
+.imageViewerScrollWrap>a.imageScrollNext:hover,
+.imageViewerScrollWrap>a.imageScrollNext.alwayson { background-position: 95% 50%; }
+.imageViewerScrollWrap .imageScrollPrev { background: url('/v9/media/images/image-viewer/v1/img-viewer-scroll-prev.png') 10000px no-repeat; display: block; float: left; height: 100%; text-indent: -10000px; width: 49%; }
+.imageViewerScrollWrap .imageScrollNext { background: url('/v9/media/images/image-viewer/v1/img-viewer-scroll-next.png') 10000px no-repeat; display: block; float: right; height: 100%; text-indent: -10000px; width: 49%; }
+.ui-dialog .imageViewerScrollWrap { z-index: 2000; }
+#spins .imageViewer {width:320px; height:240px;}
+#spins .helpSpins {padding:0 10px;}
+#spins ul { display:block; width:100%; padding:10px 0; }
+#spins li { width:48%; float:left; margin:0 4px; }
+#spins .exterior {float:right;}
+#spins .interior {float:left; }
+.helpSpins { clear:both; width:200px; height:90px; }
+.helpSpins .pan, #helpSpins .pan { background: url(/v8/widgets/automotive/inventory/details/v4/images/controls.gif) no-repeat 10px -43px; }
+.helpSpins .zoomIn, #helpSpins .zoomIn { background: url(/v8/widgets/automotive/inventory/details/v4/images/controls.gif) no-repeat 0 -145px; }
+.helpSpins .zoomOut, #helpSpins .zoomOut { background: url(/v8/widgets/automotive/inventory/details/v4/images/controls.gif) no-repeat 0 -95px; }
+.helpSpins span { display: block; padding: 5px 10px 5px 50px; }
+ #spins .imageViewer,
+ #spins ul,
+ .helpSpins { margin:0 auto; }
+.helpSpins span { font-family: arial,helvetica,sans-serif; font-size:13px; }
+
+.xoxo .details .comments .value span {float:none;display:inline;}

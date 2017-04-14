@@ -1,0 +1,1827 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+/* jshint unused:false */
+
+var CONF = {
+    GDS_PIXEL_URL: '//px.marchex.io/pixel.gif'
+};
+
+function getConf(confName) {
+    return CONF[confName];
+}
+
+module.exports = {
+    getConf: getConf
+};
+
+},{}],2:[function(_dereq_,module,exports){
+/* global document:false */
+/* global _vsnocookies:false */
+
+// We don't escape value here, that's done on the server side
+function setCookie(name, value, ttlHours) {
+    var ttlSeconds = ttlHours * 60 * 60;
+    if (typeof _vsnocookies !== 'undefined' && _vsnocookies) {
+        return;
+    }
+
+    var domain = _getDomainForCookie();
+    var cookieArray = [ name ];
+    cookieArray.push("=");
+    cookieArray.push(value);
+    cookieArray.push("; path=/");
+    if (domain) {
+        cookieArray.push("; domain=");
+        cookieArray.push(domain);
+    }
+    if (ttlSeconds) {
+        var now = new Date();
+        ttlSeconds = new Date( now.getTime() + (ttlSeconds * 1000));
+        cookieArray.push("; expires=");
+        cookieArray.push(ttlSeconds.toGMTString());
+    }
+
+    document.cookie = cookieArray.join('');
+}
+
+function getCookie(cname) {
+    if (typeof _vsnocookies !== 'undefined' && _vsnocookies) {
+        return "";
+    }
+    var name = cname + "=";
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(name) === 0) {
+            return cookie.substring(name.length, cookie.length);
+        }
+    }
+    return "";
+}
+
+function _getDomainForCookie() {
+    var domainParts = document.location.hostname.split('.');
+    if (domainParts.length > 1) {
+        var tld = domainParts.pop();
+        return "." + domainParts.pop() + "." + tld;
+    }
+    return null;
+}
+
+module.exports = {
+    setCookie: setCookie,
+    getCookie: getCookie
+};
+
+},{}],3:[function(_dereq_,module,exports){
+// Jshint suppress useless warnings
+/* global document:false */
+/* global window:false */
+
+var util = _dereq_('./jsrw-util');
+
+function main () {
+    var ruleSetId = 'Ch4Nl1gzidgURQAo'; // jshint ignore:line
+
+    var protocol = document.location.protocol;
+    var url_array = [protocol];
+    url_array.push('//snc.marchex.io/sync.html?ruleSetId=');
+    url_array.push(ruleSetId);
+    var url = url_array.join('');
+
+    // JGP 7/20/2015
+    // if onload event has fired from jsrw v1 then we must check
+    // the readyState otherwise it will never fire (this is only
+    // an issue in old IE browsers)
+    if (document.readyState === 'complete') {
+        addIframe(url);
+    } else {
+        util.addSafeEventListener(window, "load", function() {
+            addIframe(url);
+        });
+    }
+}
+
+function addIframe(url) {
+    var iframe = document.createElement('iframe');
+    iframe.src = url;
+    iframe.height = '0px';
+    iframe.width = '0px';
+    iframe.style = 'display:none;visibility:hidden';
+    document.body.appendChild(iframe);
+}
+
+module.exports = {
+    main: main
+};
+
+},{"./jsrw-util":7}],4:[function(_dereq_,module,exports){
+'use strict';
+
+var haveMAGCookieFlag = true; // jshint ignore:line
+
+function FlagManager() {
+    this.checkPhoneQueueFlag = false;
+}
+
+FlagManager.prototype.setHaveMAGCookie = function() {
+    haveMAGCookieFlag = true;
+};
+
+FlagManager.prototype.getHaveMAGCookie = function() {
+    return haveMAGCookieFlag;
+};
+
+FlagManager.prototype.setCheckPhoneQueueTrue = function() {
+    this.checkPhoneQueueFlag = true;
+};
+
+FlagManager.prototype.setCheckPhoneQueueFalse = function() {
+    this.checkPhoneQueueFlag = false;
+};
+
+FlagManager.prototype.getCheckPhoneQueue = function() {
+    return this.checkPhoneQueueFlag;
+};
+
+module.exports = {
+    FlagManager : FlagManager
+};
+
+},{}],5:[function(_dereq_,module,exports){
+// Jshint suppress useless warnings
+/* global document:false */
+/* global window:false */
+
+// Variables that need global scope to everything
+// must be defined here
+// jshint ignore:start
+var MCA_REWRITE_MANAGER;
+var MCA_REWRITE_SPECIFIC_NUMBER;
+var vs_ref_override;
+var _vsnocookies;
+var vs_account_id;
+var vs_manual_mode = false;
+var vs_intl_class;
+var vs_intl;
+// jshint ignore:end
+
+(function(document, window, undefined) {
+    "use strict";
+    var main = _dereq_('./rewriter-main').main;
+    main();
+    var cookie_main = _dereq_('./cookie-sync-main').main;
+    cookie_main();
+
+}(document, window));
+
+},{"./cookie-sync-main":3,"./rewriter-main":18}],6:[function(_dereq_,module,exports){
+// Jshint suppress useless warnings
+/* global window:false */
+/* global MCA_REWRITE_MANAGER:false */
+/* global MCA_REWRITE_SPECIFIC_NUMBER:false */
+/* global vs_manual_mode:false */
+/* global vs_intl_class:false */
+/* global vs_intl:false */
+
+
+/* Browser-side Javascript to traverse a DOM and replace telephone numbers in it */
+
+var PhoneRequester = _dereq_('./phone-requester').PhoneRequester
+, RewriteManagerFile = _dereq_('./rewrite-manager')
+, JsrwUtil = _dereq_('./jsrw-util')
+, RewriteManager = RewriteManagerFile.RewriteManager
+, ZoneControl = _dereq_('./zone-control').ZoneControl
+;
+
+function rewriteNode (DOMNode) {
+    var zopts, zoneControl;
+
+    if ( typeof vs_intl_class === 'undefined' || vs_intl_class instanceof Node ){ // jshint ignore:line
+        vs_intl_class = 0; // jshint ignore:line
+    }
+    if ( typeof vs_intl === 'undefined' || vs_intl instanceof Node ){ // jshint ignore:line
+        vs_intl = 0; // jshint ignore:line
+    }
+
+    if( typeof MCA_REWRITE_MANAGER === 'undefined' ) {
+        MCA_REWRITE_MANAGER = new RewriteManager( PhoneRequester ); // jshint ignore:line
+        MCA_REWRITE_SPECIFIC_NUMBER = function( opts ) { // jshint ignore:line
+            MCA_REWRITE_MANAGER.RequestSpecificNumbers( opts );
+        };
+    }
+
+    if (typeof CustomEvent === 'function') {
+        var manualModeReadyEvent = new CustomEvent("phonenumberRewriterReady"); // jshint ignore:line
+        document.dispatchEvent(manualModeReadyEvent); // jshint ignore:line
+    } else if (typeof document.createEvent === 'function' ) { // jshint ignore:line
+        var manualModeReadyEvent = document.createEvent('Event'); // jshint ignore:line
+        if (typeof manualModeReadyEvent.initEvent === 'function') {
+            manualModeReadyEvent.initEvent('phonenumberRewriterReady', true, true);
+            document.dispatchEvent(manualModeReadyEvent); // jshint ignore:line
+        }
+    }
+
+    if( typeof vs_manual_mode !== 'undefined' && vs_manual_mode ) {
+        return;
+    }
+
+    JsrwUtil.addSafeEventListener( window, 'scroll', function() {MCA_REWRITE_MANAGER.flagManager.setCheckPhoneQueueTrue(); } );
+    JsrwUtil.addSafeEventListener( window, 'resize', function() {MCA_REWRITE_MANAGER.flagManager.setCheckPhoneQueueTrue(); } );
+    JsrwUtil.addSafeEventListener( window, 'click', function() {MCA_REWRITE_MANAGER.flagManager.setCheckPhoneQueueTrue(); } );
+
+
+    setInterval(function() {
+        if(MCA_REWRITE_MANAGER.flagManager.getCheckPhoneQueue() && MCA_REWRITE_MANAGER.flagManager.getHaveMAGCookie()) {
+            MCA_REWRITE_MANAGER.flagManager.setCheckPhoneQueueFalse();
+            MCA_REWRITE_MANAGER.checkPhoneVisible();
+        }
+    }, 100);
+
+    zopts = {};
+    if (vs_intl || vs_intl_class ) {
+        zopts.useIntl = true;
+    }
+    if (vs_intl_class) {
+        zopts.useIntlClass = vs_intl_class;
+    }
+    zopts.vanity= false ; // jshint ignore:line
+    zoneControl = new ZoneControl(zopts);
+
+    _checkTheNode(DOMNode, zoneControl, MCA_REWRITE_MANAGER);
+    MCA_REWRITE_MANAGER.flagManager.setCheckPhoneQueueTrue();
+    if (MCA_REWRITE_MANAGER.flagManager.getHaveMAGCookie()) {
+        MCA_REWRITE_MANAGER.finalFlush();
+    } else {
+        // after x ms rewrite the page regardless of if we have a mag cookie
+        setTimeout(function() {MCA_REWRITE_MANAGER.flagManager.setHaveMAGCookie(); } , 250);
+        setTimeout( function() { MCA_REWRITE_MANAGER.finalFlush(); }, 3000 );
+    }
+
+    var observeDOM = (function(){
+        var MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
+            eventListenerSupported = window.addEventListener;
+
+        return function(obj, callback){
+            if( MutationObserver ){
+                // define a new observer
+                var obs = new MutationObserver(function(mutations, observer){ // jshint ignore:line
+                    mutations.forEach(function(mutation) {
+                    if( mutation.type === 'childList' && mutation.addedNodes.length ) {
+                        callback(mutation);
+                    }
+                    });
+                });
+                // have the observer observe foo for changes in children
+                obs.observe( obj, { 'childList': true,
+                                    'subtree' : true,
+                                    'attributes' : false,
+                                    'characterData' : false });
+            }
+            else if( eventListenerSupported ){
+                obj.addEventListener('DOMNodeInserted', callback, false);
+            }
+        };
+    })();
+
+    // Observe a specific DOM element:
+    observeDOM( DOMNode ,function(mutation){
+        if (mutation.addedNodes ) {
+            var mutationLen = mutation.addedNodes.length;
+            for (var i = 0; i < mutationLen ; ++ i) {
+                _checkTheNode(mutation.addedNodes[i], zoneControl, MCA_REWRITE_MANAGER);
+            }
+        } else {
+            _checkTheNode(mutation.target, zoneControl, MCA_REWRITE_MANAGER);
+        }
+        MCA_REWRITE_MANAGER.flagManager.setCheckPhoneQueueTrue();
+    });
+
+}
+
+function _hasScrollBar( node ) {
+    if( !! node.clientHeight
+        && !! node.scrollHeight
+        && node.clientHeight < node.scrollHeight
+        && node.tagName !== 'BODY'
+        && node.tagName !== 'HTML'
+    ) {
+        return true;
+    }
+    return false;
+}
+
+function _hasClassName( node, className ) {
+    var i, classNames;
+
+    if ( !className ) { // any false value of className
+        return false;
+    }
+    if( typeof node.className !== 'string' ) {
+        return false;
+    }
+
+    classNames = node.className.split( ' ' );
+    var classNamesLen = classNames.length;
+    for( i = 0; i < classNamesLen; ++i ) {
+        if( classNames[i] === className ) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function _rewriteSupportedDomNode( node, regexName, mca_rewrite_manager ) {
+    var allRecognizedPhones = mca_rewrite_manager.storeNode( node, regexName );
+    var allRecogLength = allRecognizedPhones.length;
+
+    for( var i = 0; i < allRecogLength; ++i ) {
+        var guid = allRecognizedPhones[i].guid;
+        var recognizedPhone = allRecognizedPhones[i].phone;
+
+        var strippedPhone = recognizedPhone.strippedPhone;
+
+        // this is already a number that has been rewritten
+        if( mca_rewrite_manager.isCtn( strippedPhone ) ) {
+            continue;
+        }
+
+        var ctn = mca_rewrite_manager.hasSeenCtn(strippedPhone);
+        if (!ctn) {
+            mca_rewrite_manager.storePhoneNumber(strippedPhone, guid, false);
+            if (!mca_rewrite_manager.hasPhoneBeenRequested(strippedPhone)
+                && mca_rewrite_manager.isElementInVerticalViewport(recognizedPhone.node)) {
+                mca_rewrite_manager.phoneRequest(guid, strippedPhone);
+            }
+        } else {
+            mca_rewrite_manager.rewriteMcaNumber(guid, ctn);
+        }
+    }
+}
+
+function _traverseDOM( node, childOfMcaNumber, regexName, theClassArray, mca_rewrite_manager ) {
+    var i, kids;
+    var searchThisNode = false;
+
+    if( ! node || node.nodeName === 'SCRIPT' ) {
+        return;
+    }
+
+    if ( _hasClassName(node, 'vsnotnumber') ) {
+        return;
+    }
+
+    if( _hasScrollBar( node ) ) {
+        JsrwUtil.addSafeEventListener( node, 'scroll', function() {
+            mca_rewrite_manager.flagManager.setCheckPhoneQueueTrue();
+        });
+        JsrwUtil.addSafeEventListener( node, 'resize', function() {
+            mca_rewrite_manager.flagManager.setCheckPhoneQueueTrue();
+        });
+    }
+    var theClassArrayLen = theClassArray ? theClassArray.length : 0;
+    if (childOfMcaNumber || theClassArrayLen === 0 ) {
+        searchThisNode = true;
+    } else {
+        for (i=0; i < theClassArrayLen; ++i) {
+            if (_hasClassName(node, theClassArray[i])) {
+                searchThisNode = true;
+                break;
+            }
+        }
+    }
+
+    if (searchThisNode) {
+        _rewriteSupportedDomNode( node, regexName, mca_rewrite_manager );
+    }
+
+    kids = node.childNodes;
+
+    var kidsLen = kids.length;
+    for( i = 0; i < kidsLen; ++i ) {
+        _traverseDOM( kids[i], searchThisNode, regexName, theClassArray, mca_rewrite_manager );
+        if( kids.length != kidsLen ){
+            // extra nodes were added for CTC link. skip link
+            kidsLen = kids.length;
+            ++i;
+        }
+    }
+}
+
+function _checkTheNode(node, zoneCtl, mca_rewrite_manager ) {
+    var i;
+    var regexNamesList = Object.keys(zoneCtl);
+
+    if (_checkUseGetElementsByClass(node, zoneCtl) === true) {
+        for (i = 0; i < regexNamesList.length; ++i) {
+            var regexName = regexNamesList[i];
+            var classList = zoneCtl[regexName];
+            if (classList.length > 0 ) {
+                for (var j = 0; j < classList.length; ++j) {
+                    if (_hasClassName( node, classList[i] )) {
+                        _traverseDOM( node, 0, regexName, [], mca_rewrite_manager);
+                    } else {
+                        var nodeList = node.getElementsByClassName(classList[j]);
+                        var nodeListLen = nodeList.length;
+                        for (var k = 0; k < nodeListLen; ++k) {
+                            _traverseDOM( nodeList[k], 0, regexName, [], mca_rewrite_manager);
+                        }
+                    }
+                }
+            } else {
+                _traverseDOM( node, 0, regexName, [], mca_rewrite_manager );
+            }
+        }
+    }
+    else {
+        for (i = 0; i < regexNamesList.length; ++i) {
+            _traverseDOM( node, 0, regexNamesList[i] , zoneCtl[regexNamesList[i]], mca_rewrite_manager );
+        }
+    }
+}
+
+function _checkUseGetElementsByClass(node, zoneControl) {
+    var regexNamesList = Object.keys(zoneControl);
+    if (typeof node.getElementsByClassName !== 'function') {
+        return false;
+    }
+    var allClassListsAreEmpty = true;
+    for (var i = 0; i < regexNamesList.length; ++i) {
+        if (zoneControl[regexNamesList[i]].length > 0 ) {
+            allClassListsAreEmpty = false;
+            break;
+        }
+    }
+    if (allClassListsAreEmpty === true) {
+        return false;
+    }
+    if (node.getElementsByClassName('vsnotnumber').length !== 0 ) {
+        return false;
+    }
+    return true;
+}
+module.exports = {
+    rewriteNode: rewriteNode
+};
+
+},{"./jsrw-util":7,"./phone-requester":13,"./rewrite-manager":17,"./zone-control":19}],7:[function(_dereq_,module,exports){
+function addSafeEventListener( node, eventName, callback ) {
+    if( ! node.addEventListener ) {
+        node.attachEvent( 'on' + eventName, callback );
+    } else {
+        node.addEventListener( eventName, callback );
+    }
+}
+
+module.exports = {
+    addSafeEventListener: addSafeEventListener
+};
+
+},{}],8:[function(_dereq_,module,exports){
+'use strict';
+
+var phoneRegexFile = _dereq_( './phone-regex' )
+//,   recognizedPhone     = require( './recognized-phone' )
+//,   phoneType           = recognizedPhone.PhoneType
+;
+
+var phoneType = {
+   NANPA : 'nanpa',
+   NANPA_TEL: 'nanpa-tel',
+   INTL : 'intl',
+   INTL_TEL : 'intl-tel',
+   VANITY : 'vanity',
+   VANITY_TEL : 'vanity-tel',
+   INVALID : 'invalid'
+};
+var NANPA_NAME = phoneType.NANPA;
+var NANPA_NAME_TEL_TAG = phoneType.NANPA_TEL;
+var INTL_NAME = phoneType.INTL;
+var INTL_NAME_TEL_TAG = phoneType.INTL_TEL;
+var VANITY_NAME = phoneType.VANITY;
+var VANITY_NAME_TEL_TAG = phoneType.VANITY_TEL;
+
+function initParserList() {
+    var result = {};
+    result[NANPA_NAME] = phoneRegexFile.NANPA_RX;
+    result[NANPA_NAME_TEL_TAG] = phoneRegexFile.NANPA_RX_TEL_TAG;
+    result[INTL_NAME] = phoneRegexFile.INTL_RX;
+    result[INTL_NAME_TEL_TAG] = phoneRegexFile.INTL_RX_TEL_TAG;
+    result[VANITY_NAME] = phoneRegexFile.VANITY_RX;
+    result[VANITY_NAME_TEL_TAG] = phoneRegexFile.VANITY_RX_TEL_TAG;
+    return result;
+}
+var parserList = initParserList();
+
+function getRegExForName(parserName, telTag) {
+    if (telTag){
+        parserName= parserName+'-tel';
+    }
+    return parserList[parserName];
+}
+
+module.exports = {
+    getRegExForName: getRegExForName
+};
+
+},{"./phone-regex":12}],9:[function(_dereq_,module,exports){
+/* global document:false */
+
+var conf = _dereq_('./browser_js_conf')
+;
+
+var base64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.-";
+
+function Mag(flagManager) {
+    this.flagManager = flagManager;
+}
+
+Mag.prototype.requestInitialPixel = function() {
+    _createPixel(_buildUrl(), this.flagManager);
+};
+
+Mag.prototype.requestPixelForPhoneNumbers = function(phoneNumbers) {
+    _createPixel(_buildUrl(_getDistinctValues(phoneNumbers)), this.flagManager);
+};
+
+function _encodePhoneNumber(phoneNumber) {
+    var encodedString = '';
+    while (1 <= phoneNumber) {
+        encodedString = encodedString + base64.charAt(phoneNumber % 64);
+        phoneNumber = phoneNumber / 64;
+    }
+
+    return encodedString;
+}
+
+function _createPixel(url, flagManager) {
+    if (typeof document !== 'undefined') {
+        var pixel = document.createElement("img");
+        pixel.onload = function () {
+            flagManager.setCheckPhoneQueueTrue();
+            flagManager.setHaveMAGCookie();
+        };
+        pixel.style.display = "none";
+        pixel.src = url;
+        pixel.alt = '';
+        document.body.appendChild(pixel);
+    }
+}
+
+function _buildUrl(phoneNumbers) {
+    var url = conf.getConf('GDS_PIXEL_URL');
+    if (!!phoneNumbers) {
+        var encodedNumbers = [];
+        for (var i=0; i < phoneNumbers.length; i++) {
+            encodedNumbers.push(_encodePhoneNumber(phoneNumbers[i].replace(/[^\d\+]/g, '')));
+        }
+
+        if (encodedNumbers.length > 0) {
+            url = url.concat('?p=').concat(encodedNumbers.join(','));
+        }
+    }
+
+    return url;
+}
+
+function _getDistinctValues(array) {
+    var i, target = [];
+    var length = array.length;
+    for (i = 0; i < length; ++i) {
+        if (!_inArray(array[i], target)) {
+            target.push(array[i]);
+        }
+    }
+    return target;
+}
+
+function _inArray(needle, haystack) {
+    var length = haystack.length;
+    for (var i = 0; i < length; ++i) {
+        if (haystack[i] === needle) {
+            return true;
+        }
+    }
+    return false;
+}
+
+module.exports = {
+    Mag: Mag
+};
+
+},{"./browser_js_conf":1}],10:[function(_dereq_,module,exports){
+'use strict';
+
+// abc def ghi jkl mno pqrs tuv wxyz
+// 2   3   4    5  6    7    8   9
+var phoneNumberMap = { 'a' : 2,
+                       'b' : 2,
+                       'c' : 2,
+                       'd' : 3,
+                       'e' : 3,
+                       'f' : 3,
+                       'g' : 4,
+                       'h' : 4,
+                       'i' : 4,
+                       'j' : 5,
+                       'k' : 5,
+                       'l' : 5,
+                       'm' : 6,
+                       'n' : 6,
+                       'o' : 6,
+                       'p' : 7,
+                       'q' : 7,
+                       'r' : 7,
+                       's' : 7,
+                       't' : 8,
+                       'u' : 8,
+                       'v' : 8,
+                       'w' : 9,
+                       'x' : 9,
+                       'y' : 9,
+                       'z' : 9 };
+
+function mapVanityToNumber( vanity ) {
+    var result = [''], i, digit, c;
+    var lowerVanity = vanity.toLowerCase();
+    var lowerVanityLen = lowerVanity.length;
+    for (i = 0; i < lowerVanityLen; ++i) {
+        c = lowerVanity.charAt(i);
+        digit = phoneNumberMap[c];
+        if (digit === undefined ) {
+            result.push(c); // get original character.
+        } else {
+            result.push(digit);
+        }
+    }
+    return result.join('');
+}
+
+module.exports = {
+    mapVanityToNumber: mapVanityToNumber
+};
+
+},{}],11:[function(_dereq_,module,exports){
+var phoneRegexFile = _dereq_( './phone-regex' )
+, RegexMatchFactory = _dereq_( './regex-match-factory' ).RegexMatchFactory
+, lookupRegEx = _dereq_( './lookup-regex' )
+, mapVanityToNumber = _dereq_( './map_vanity_to_number')
+, RecognizedPhoneFile = _dereq_( './recognized-phone' )
+, RecognizedPhone = RecognizedPhoneFile.RecognizedPhone
+, phoneTypes = RecognizedPhoneFile.PhoneTypes
+;
+
+var NANPA_RX = phoneRegexFile.NANPA_RX;
+
+var NPA_FIRST_EXTRA_DIGITS = phoneRegexFile.NPA_FIRST_EXTRA_DIGITS;
+var NPA_IDX = phoneRegexFile.NPA_IDX;
+var NXX_IDX = phoneRegexFile.NXX_IDX;
+var SUB_IDX = phoneRegexFile.SUB_IDX;
+var NPA_SECOND_EXTRA_DIGITS = phoneRegexFile.NPA_SECOND_EXTRA_DIGITS;
+
+function phoneRecognizer(node, regexName ) {
+    var phoneCriteria = _getPhoneRegex( node, regexName );
+    var phoneString = phoneCriteria.phoneString;
+    var regex = phoneCriteria.regex;
+
+    var matchedPhones = _recognizePhone( phoneString, regex, regexName );
+
+    var recognizedPhones = [];
+    for( var i = 0; i < matchedPhones.length; i++ ) {
+        var recognizedPhone = new RecognizedPhone( {
+            strippedPhone : matchedPhones[i].strippedPhone,
+            formattedPhone : matchedPhones[i].formattedPhone,
+            type : matchedPhones[i].type,
+            matched : matchedPhones[i].matched,
+            node : node
+        } );
+        recognizedPhones.push( recognizedPhone );
+    }
+
+    return recognizedPhones;
+}
+
+function _getPhoneRegex( node, regexName ) {
+    var phoneString;
+    var regex;
+
+    if( node.nodeName === '#text' || node.nodeName === 'TD') {
+        phoneString = node.nodeValue;
+        regex = lookupRegEx.getRegExForName(regexName, false);
+    } else if( node.nodeName === 'A' ) {
+        phoneString = node.href;
+        regex = lookupRegEx.getRegExForName(regexName, true);
+    }
+
+    return {
+        phoneString : phoneString,
+        regex : regex
+    };
+}
+
+function getNanpaStrippedPhone( phoneString ) {
+    var recognizedPhones = _recognizeNanpa(phoneString, NANPA_RX);
+    if (recognizedPhones.length === 1) {
+        return recognizedPhones[0].strippedPhone;
+    }
+
+    return null;
+}
+
+function _recognizeNanpa( phoneString, regex ) {
+    var strippedPhoneList, strippedPhone, formattedPhone;
+
+    var nanpaFactory = new RegexMatchFactory( {
+        inputString : phoneString,
+        regex : regex
+    } );
+
+    var matchedPhones = [];
+    var match;
+    while( match = nanpaFactory.getNextMatch() ) {
+        if ( _isNanpaPhonePartsValid( match ) ) {
+            strippedPhoneList = [''];
+            strippedPhoneList.push(match[NPA_IDX]);
+            strippedPhoneList.push(match[NXX_IDX]);
+            strippedPhoneList.push(match[SUB_IDX]);
+            strippedPhone = strippedPhoneList.join('');
+
+            formattedPhone = match[0];
+            if( formattedPhone.substring( 0, 4 ) === 'tel:' ) {
+                formattedPhone = formattedPhone.substring( 4 );
+            }
+
+            matchedPhones.push( {
+                type : phoneTypes.NANPA,
+                strippedPhone : strippedPhone,
+                formattedPhone : formattedPhone,
+                matched : match
+            } );
+        }
+    }
+
+    return matchedPhones;
+}
+
+function _countDigits( strippedPhone ) {
+    var numDigits = 0;
+    var c, i;
+    var strippedPhoneLen = strippedPhone.length;
+    for (i = 0; i < strippedPhoneLen; ++i) {
+        c = strippedPhone.charAt(i);
+        if (c >= '0' && c <= '9' ) {
+            ++numDigits;
+        }
+    }
+    return numDigits;
+}
+
+function _recognizeInternational( phoneString, regex ) {
+    var match, strippedPhone, mIndex, mLength;
+
+    var intlFactory = new RegexMatchFactory( {
+        inputString : phoneString,
+        regex : regex
+    } );
+
+    var matchedPhones = [];
+    while( match = intlFactory.getNextMatch() ) {
+        if( match ) {
+            strippedPhone = stripPhoneNumber(match[0]);
+            if ( _countDigits(strippedPhone) < 21 ) {
+                mIndex = match.index;
+                mLength = match[0].length;
+                matchedPhones.push( {
+                    type : phoneTypes.INTL,
+                    formattedPhone : match.input.substring( mIndex, mIndex + mLength ),
+                    strippedPhone : strippedPhone,
+                    matched : match
+                } );
+            }
+        }
+    }
+
+    return matchedPhones;
+}
+
+function _recognizeVanity( phoneString, regex ) {
+    var match, mappedPhone, strippedPhone, mIndex, phoneIndex;
+
+    var vanityFactory = new RegexMatchFactory( {
+        inputString : phoneString,
+        regex : regex
+    } );
+
+    var matchedPhones = [];
+    while( match = vanityFactory.getNextMatch() ) {
+        if( match ) {
+            if (match.length == 3) {
+                phoneIndex = 2;
+                mIndex = match.index + match[1].length;
+            } else {
+                phoneIndex = 1;
+                mIndex = match.index;
+            }
+            mappedPhone = mapVanityToNumber.mapVanityToNumber(match[phoneIndex]);
+            strippedPhone = stripPhoneNumber(mappedPhone);
+            if ( _countDigits(strippedPhone) < 21 ) {
+                matchedPhones.push( {
+                    type : phoneTypes.VANITY,
+                    formattedPhone : match.input.substring( mIndex, mIndex + match[phoneIndex].length ),
+                    strippedPhone : strippedPhone,
+                    matched : match
+                } );
+            }
+        }
+    }
+
+    return matchedPhones;
+}
+
+function _recognizePhone( phoneString, regex, regexName) {
+    var theOriginalPhoneNumber;
+
+    if( regex && phoneString ) {
+        if( regexName === phoneTypes.INTL ) {
+            theOriginalPhoneNumber = _recognizeInternational( phoneString, regex );
+        } else if( regexName === phoneTypes.VANITY ) {
+            theOriginalPhoneNumber = _recognizeVanity( phoneString, regex );
+        } else {
+            theOriginalPhoneNumber = _recognizeNanpa( phoneString, regex );
+        }
+        if( theOriginalPhoneNumber ) {
+            return theOriginalPhoneNumber;
+        }
+    }
+
+    return [];
+}
+
+function _isNanpaPhonePartsValid( phoneParts ) {
+    if( ! phoneParts
+        || phoneParts[NPA_FIRST_EXTRA_DIGITS] !== ''
+        || phoneParts[NPA_SECOND_EXTRA_DIGITS] !== '' ) {
+        return false;
+    }
+
+    return true;
+}
+
+// remove everything that isn't a leading "+" or a digit
+function stripPhoneNumber( number ) {
+    if ( typeof number !== 'string' ){
+        return null;
+    }
+    var firstPlus = number.charAt(0) === '+';
+    var stripped = number.replace(/[^0-9]/g,'');
+    if ( firstPlus ) {
+        stripped = '+' + stripped;
+    }
+    return stripped;
+}
+
+module.exports = {
+    stripPhoneNumber : stripPhoneNumber,
+    phoneRecognizer : phoneRecognizer,
+    getNanpaStrippedPhone : getNanpaStrippedPhone
+};
+
+},{"./lookup-regex":8,"./map_vanity_to_number":10,"./phone-regex":12,"./recognized-phone":15,"./regex-match-factory":16}],12:[function(_dereq_,module,exports){
+var NANPA_RX = _getNanpaRegex( { includeTel : false } );
+var NANPA_RX_TEL_TAG = _getNanpaRegex( { includeTel : true } );
+var INTL_RX = _getIntlRegex();
+var VANITY_RX = _getVanityRegex( { includeTel: false });
+var VANITY_RX_TEL_TAG= _getVanityRegex( { includeTel: true });
+
+var NPA_LEADING_ONE = 1;
+var NPA_OPTIONAL_PARAN = 2;
+var NPA_FIRST_EXTRA_DIGITS = 3;
+var NPA_IDX = 4;
+var NPA_OPTIONAL_PUNCT1 = 5;
+var NXX_IDX = 6;
+var NPA_OPTIONAL_PUNCT2 = 7;
+var SUB_IDX = 8;
+var NPA_SECOND_EXTRA_DIGITS = 9;
+
+function _getSpecialChars(){
+    var puncts = [
+        '\\', 'xAD', // soft hyphen
+        '\\', 'xB7', // middle dot
+        '\\', 'u2010', // hyphen
+        '\\', 'u2011', // non-breaking hyphen
+        '\\', 'u2013', // en dash
+        '\\', 'u2014', // em dash
+        '\\', 'u2015', // horizontal bar
+        '\\', 'u2022', // bullet
+        '\\', 'u2027', // hyphen point
+        '\\', 'u2043', // hyphen bullet
+        '\\', 'u2063', // invisible separator
+        '\\', 'u2212' // minus
+    ];
+    var punct_str = puncts.join('');
+    return punct_str;
+}
+
+function _getNanpaRegex( opts ) {
+    var includeTel = opts['includeTel'];
+
+    // Build "the regex":
+    var gap = _getSpecialChars() + '\\s\\.\\\-';
+    var gap1 = "(?:[)" + gap + "]|%20)*"; // Allows ')'.
+    var gap2 = "(?:[" + gap + "]|%20)*"; // Just spaces, hyphens, and periods.
+    var parts = [
+        '(1?)', // 1: Optional leading 1
+        '(\\(?)', // 2: Optional opening '('
+        '(\\d*)', // 3: Extra digits mean not a phone number
+        '([2-9]\\d{2})', // 4: NPA (area code) 1 or zero leading not allowed.
+        "(" + gap1 + ")", // 5: punctuation, spaces, ')'
+        '(\\d{3})', // 6: NXX (prefix)
+        "(" + gap2 + ")", // 7: punctuation, spaces
+        '(\\d{4})', // 8: Last 4 digits of NANP phone number
+        '(\\d*)' // 9: Extra digits mean not a phone number
+    ];
+
+    if( includeTel ) {
+        parts.unshift( '(?:tel:)(?:\\s*1\\s*[.-]?\\s*)?' );
+    }
+
+    var nanpa_str = parts.join( '' );
+    return new RegExp( nanpa_str) ;
+}
+
+function _getIntlRegex(){
+    var parts = [
+        '(', // begin match group
+        '[[\\(\\+]?', // optional leading chars: [(+
+        '(?:[0-9](?:[[\\]()\\s.\\-', _getSpecialChars(),']|%20)*',')', // body of number
+        '{4,}[0-9]', // at least 5 chars, but no more than 20 ending in a digit
+        ')' // end capture group
+     ];
+    var intlString = parts.join('');
+    return new RegExp( intlString );
+}
+
+function _getVanityRegex(opts){
+    var includeTel = opts['includeTel'];
+    var listOfVanities = [ '(?:1\\W*)?800\\W?T\\W?MOBILE' ]; // [ __LIST_OF_VANITY_NUMBERS__ ]
+    var parts = [''];
+    var telTag, telTagString;
+    var i;
+
+    if( includeTel && 1 ) {
+        for (i=0; i< listOfVanities.length; ++i ) {
+            telTag = ['(tel:\\W*)('];
+            telTag.push(listOfVanities[i]);
+            telTag.push(')\\s*?' );
+            telTagString = telTag.join('');
+
+            parts.unshift( telTagString );
+        }
+    }
+    else {
+        for (i=0; i< listOfVanities.length; ++i ) {
+            parts.push('('); // begin match group
+            parts.push(listOfVanities[i]);
+            parts.push(')'); // end capture group
+        }
+    }
+    var vanityString = parts.join('');
+    return new RegExp( vanityString , "i");
+}
+
+module.exports = {
+    NANPA_RX : NANPA_RX,
+    NANPA_RX_TEL_TAG : NANPA_RX_TEL_TAG,
+    INTL_RX : INTL_RX,
+    INTL_RX_TEL_TAG : INTL_RX,
+    VANITY_RX : VANITY_RX,
+    VANITY_RX_TEL_TAG : VANITY_RX_TEL_TAG,
+    NPA_LEADING_ONE : NPA_LEADING_ONE,
+    NPA_OPTIONAL_PARAN : NPA_OPTIONAL_PARAN,
+    NPA_FIRST_EXTRA_DIGITS : NPA_FIRST_EXTRA_DIGITS,
+    NPA_IDX : NPA_IDX,
+    NPA_OPTIONAL_PUNCT1 : NPA_OPTIONAL_PUNCT1,
+    NXX_IDX : NXX_IDX,
+    NPA_OPTIONAL_PUNCT2 : NPA_OPTIONAL_PUNCT2,
+    SUB_IDX : SUB_IDX,
+    NPA_SECOND_EXTRA_DIGITS : NPA_SECOND_EXTRA_DIGITS
+};
+
+},{}],13:[function(_dereq_,module,exports){
+'use strict';
+
+// Jshint suppress useless warnings
+/* global document:false */
+/* global JSON:false */
+/* global mchx_jsrw_args:false */
+/* global vs_ref_override:false */
+/* global _vsnocookies:false */
+/* global vs_account_id:false */
+
+var CookieManager = _dereq_('./cookie-manager')
+;
+
+function PhoneRequester( batchSize, mca_rewrite_manager ) {
+    this.batchSize = batchSize;
+    this.queue = [];
+    this.hasFirstRequestOccurred = false;
+    this.phoneRequestComponents = _getPhoneComponentsForPage();
+    this.baseUrlLength = _calculateBaseUrlLength( this.phoneRequestComponents );
+    this.mca_rewrite_manager = mca_rewrite_manager;
+}
+
+PhoneRequester.prototype.enqueue = function( guid, strippedPhone ) {
+    this.queue.push( {
+        guid : guid,
+        strippedPhone : strippedPhone
+    } );
+
+    if( this.mca_rewrite_manager.flagManager.getHaveMAGCookie()
+       && ( ! this.hasFirstRequestOccurred || this.queue.length >= this.batchSize ) ) {
+        this.flush();
+    }
+};
+
+PhoneRequester.prototype.manualRequest = function( guid, numOnPage ) {
+    var requestList = {};
+    requestList[guid] = numOnPage;
+    var encodedRequestList = _encodeRequestList( requestList );
+    this.hasFirstRequestOccurred = true;
+    this.jsonpCall( 'phone', encodedRequestList );
+};
+
+PhoneRequester.prototype.finalFlush = function() {
+    if( ! this.hasFirstRequestOccurred && this.queue.length === 0) {
+        this.hasFirstRequestOccurred = true;
+        this.jsonpCall( 'nophone', null );
+    } else {
+        this.flush();
+    }
+};
+
+PhoneRequester.prototype.flush = function() {
+    while ( this.queue.length > 0 ) {
+        var q = [];
+        var curLength = this.baseUrlLength;
+        while ( this.queue.length > 0 && q.length < this.batchSize ) { // max length of url (in bytes) = 2000 - {guid,phone}.length
+            q.push(this.queue.pop());
+            curLength += 30; // long enough
+            if(curLength > 1970) { break; }
+        }
+        var requestList = _constructRequestList( q, this.mca_rewrite_manager );
+        this.jsonpCall( 'phone', requestList );
+        this.hasFirstRequestOccurred = true;
+    }
+};
+
+
+PhoneRequester.prototype.jsonpCall = function( route, requestList ) {
+    var script = document.createElement( 'script' );
+    script.src = this._constructJsonpUrl( route, requestList );
+    document.body.appendChild( script );
+};
+
+PhoneRequester.prototype._constructJsonpUrl = function( route, requestList ) {
+    var arg = this.phoneRequestComponents.mchxArgs;
+    var url = this.phoneRequestComponents.url;
+    var rfr = this.phoneRequestComponents.rfr;
+    var _rw_fpc = this.phoneRequestComponents._rw_fpc;
+
+    var base = _constructBaseUrl( route );
+    var jsonpUrlList = [ base ];
+    jsonpUrlList.push( '/');
+
+    if( requestList ) {
+        jsonpUrlList.push( requestList );
+    }
+
+    jsonpUrlList.push( '?url=' );
+    jsonpUrlList.push( url );
+
+    if ( rfr ) {
+        jsonpUrlList.push( '&rfr=' );
+        jsonpUrlList.push( rfr );
+    }
+
+    if (_rw_fpc) {
+        jsonpUrlList.push('&_rw_fpc=');
+        jsonpUrlList.push(_rw_fpc);
+    }
+
+    if ( arg ) {
+        jsonpUrlList.push( arg );
+    }
+
+    return jsonpUrlList.join('');
+};
+
+
+function _calculateBaseUrlLength( phoneRequestComponents ) {
+    var base = _constructBaseUrl( 'phone' );
+    var baseLength = base.length;
+    baseLength += phoneRequestComponents.mchxArgs.length;
+    baseLength += phoneRequestComponents.url.length;
+    baseLength += phoneRequestComponents.rfr.length;
+    if (typeof phoneRequestComponents._rw_fpc !== 'undefined') {
+        baseLength += phoneRequestComponents._rw_fpc.length;
+    }
+
+    return baseLength;
+}
+
+function _constructRequestList( queue, mca_rewrite_manager ) {
+    if( queue.length <= 0 ) {
+        return null;
+    }
+
+    var i, guid, phone;
+    var requestList = {};
+    var phones = [];
+    for( i = 0; i < queue.length; i++ ) {
+        guid = queue[i].guid;
+        phone = queue[i].strippedPhone;
+        requestList[guid] = phone;
+
+        if ( mca_rewrite_manager.hasOwnProperty( guid )
+             && mca_rewrite_manager[guid].isNanpa()) {
+            phones.push('+1' + phone);
+        }
+    }
+
+    if( queue.length > 0 ) {
+        mca_rewrite_manager.mag.requestPixelForPhoneNumbers(phones);
+    }
+
+    return _encodeRequestList( requestList );
+}
+
+function _encodeRequestList( requestList ) {
+    return encodeURIComponent( JSON.stringify( requestList ) );
+}
+
+function _getRuleSetId() {
+    return 'Ch4Nl1gzidgURQAo'; // jshint ignore:line
+}
+
+function _constructBaseUrl( route ) {
+    var urlList = ['//'];
+    var ruleSetId = _getRuleSetId();
+
+    // V1 uses a global var called vs_account_id
+    var vsAccountIdType = typeof vs_account_id;
+    if( vsAccountIdType !== 'undefined'
+      && vs_account_id !== null
+      && (vsAccountIdType === 'string' && vs_account_id.length > 0)
+      ) {
+        ruleSetId = vs_account_id;
+    }
+
+    urlList.push( 'rw.marchex.io' ); // jshint ignore:line
+    urlList.push( '/' );
+    urlList.push( route );
+    urlList.push( '/' );
+    urlList.push( ruleSetId );
+
+    return urlList.join('');
+}
+
+function _getPhoneComponentsForPage() {
+    var arg = _getArgUrl();
+    var mchxArgs = arg ? '&arg=' + encodeURIComponent( arg.join( '&' ) ) : '';
+    return {
+        url : encodeURIComponent( document.URL ),
+        rfr : encodeURIComponent( document.referrer ),
+        mchxArgs : mchxArgs,
+        _rw_fpc : encodeURIComponent(_getFirstPartyCookie())
+    };
+}
+
+function _getFirstPartyCookie() {
+    return CookieManager.getCookie( _getRuleSetId() );
+}
+
+function _getArgUrl() {
+    var arg;
+    var key, keyStr;
+
+    // special variable to pass in custom sources (e.g. cookies and jsvars)
+    if (typeof mchx_jsrw_args === 'object') {
+        arg = [];
+        for( key in mchx_jsrw_args ) {
+            if( mchx_jsrw_args.hasOwnProperty( key ) ) {
+                keyStr = [ key ];
+                keyStr.push( "=" );
+                keyStr.push( mchx_jsrw_args[key] );
+                arg.push( keyStr.join( '' ) );
+            }
+        }
+    } else {
+        arg = [];
+        if( typeof vs_ref_override !== 'undefined' ) {
+           arg.push( 'v1_params.vs_ref_override=' + vs_ref_override );
+        }
+        if( typeof _vsnocookies !== 'undefined' ) {
+           arg.push( 'v1_params._vsnocookies=' + _vsnocookies );
+        }
+    }
+
+    return arg;
+}
+
+module.exports = {
+    // public
+    PhoneRequester: PhoneRequester
+};
+
+},{"./cookie-manager":2}],14:[function(_dereq_,module,exports){
+// Jshint suppress useless warnings
+/* global JSON:false */
+/* global window:false */
+
+var EventName = "jsrw-event"
+, Counters = {}
+, PerfLog = []
+, RWStats = {} // jshint ignore:line
+, Stats = []
+;
+
+var triggerEvent = (typeof window.mchx === 'object' && window.mchx.jsrwProfile)
+    ? function (name, data) {if(window.mchx.jsrwEvent)window.mchx.jsrwEvent(name, data);}
+    : function() {};
+
+var perfNow = (window.performance && typeof window.performance.now === 'function')
+    ? function() {return window.performance.now();}
+    : ((Date.now)
+        ? function() {return Date.now();}
+        : function() {return new Date().getTime();});
+
+function perfTime (counter) {
+    Counters[counter] = perfNow();
+}
+
+function perfTimeEnd (counter) {
+    var then = Counters[counter]; // jshint ignore:line
+    PerfLog.push([counter, perfNow() - Counters[counter]]);
+}
+
+function wrap (name, next) {
+    triggerEvent(name + '-start');
+    perfTime(name);
+    var res = next();
+    perfTimeEnd(name);
+    triggerEvent(name + '-end');
+    return res;
+}
+
+function getLog () {
+    var res = [].concat(Stats);
+    PerfLog.forEach(function(value, index) { // jshint ignore:line
+        var name = value[0]
+        , time = value[1]
+        ;
+        res.push({
+            type: 'perf',
+            name: name,
+            time: time
+        });
+    });
+    return res;
+}
+
+function showLog () {
+    getLog().forEach(function(value) {
+        var str = '';
+        switch(value.type) {
+        case 'perf':
+            str += value.name + ': ' + value.time.toPrecision(4) + 'ms';
+            break;
+        case 'rewr':
+            str += value.orig + ' -> ' + value.repl;
+            break;
+        default:
+            str += JSON.stringify(value);
+        }
+        void 0;
+    });
+}
+
+function rewriteNumber (orig, replaced) {
+    Stats.push({
+        type: 'rewr',
+        orig: orig,
+        repl: replaced
+    });
+}
+
+
+module.exports = {
+
+    timeStart : perfTime,
+    timeEnd : perfTimeEnd,
+    trigger : triggerEvent,
+    EventName : EventName,
+    wrap : wrap,
+    getLog : getLog,
+    showLog : showLog,
+    rewriteNumber: rewriteNumber
+
+};
+
+},{}],15:[function(_dereq_,module,exports){
+
+var PhoneType = {
+   NANPA : 'nanpa',
+   NANPA_TEL : 'nanpa-tel',
+   INTL : 'intl',
+   VANITY : 'vanity',
+   INVALID : 'invalid'
+};
+
+function RecognizedPhone( opts ) {
+    this.strippedPhone = opts.strippedPhone;
+    this.formattedPhone = opts.formattedPhone;
+    this.node = opts.node;
+    this.type = opts.type;
+    this.matched = opts.matched;
+}
+
+RecognizedPhone.prototype.isIntl = function () {
+    return this.type === PhoneType['INTL'];
+};
+RecognizedPhone.prototype.isNanpa = function () {
+    return this.type === PhoneType['NANPA'] || this.type === PhoneType['NANPA_TEL'];
+};
+RecognizedPhone.prototype.isVanity = function () {
+    return this.type === PhoneType['VANITY'];
+};
+RecognizedPhone.prototype.isValid = function () {
+    if( ! this.isIntl() && ! this.isNanpa() && !this.isVanity() ) {
+        return false;
+    }
+
+    return true;
+};
+
+module.exports = {
+    RecognizedPhone : RecognizedPhone,
+    PhoneTypes : PhoneType
+};
+
+},{}],16:[function(_dereq_,module,exports){
+'use strict';
+
+function RegexMatchFactory( opts ) {
+    this.origString = opts.inputString;
+    this.inputString = opts.inputString;
+    this.regex = opts.regex;
+}
+
+RegexMatchFactory.prototype.getNextMatch = function() {
+    var matched = this.regex.exec( this.inputString );
+
+    if( ! matched ) {
+        return null;
+    }
+
+    this.inputString = this.inputString.substring( matched.index + matched[0].length );
+    return matched;
+};
+
+module.exports = {
+    RegexMatchFactory : RegexMatchFactory
+};
+
+},{}],17:[function(_dereq_,module,exports){
+// Jshint suppress useless warnings
+/* global document:false */
+/* global window:false */
+
+
+var FlagManager = _dereq_('./flag-manager').FlagManager;
+var phoneRecognizerFile = _dereq_('./phone-recognizer');
+var phoneRecognizer = phoneRecognizerFile.phoneRecognizer;
+var getNanpaStrippedPhone = phoneRecognizerFile.getNanpaStrippedPhone;
+var stripPhoneNumber = phoneRecognizerFile.stripPhoneNumber;
+var NPA_LEADING_ONE = phoneRecognizerFile.NPA_LEADING_ONE;
+var NPA_OPTIONAL_PARAN = phoneRecognizerFile.NPA_OPTIONAL_PARAN;
+var NPA_OPTIONAL_PUNCT1 = phoneRecognizerFile.NPA_OPTIONAL_PUNCT1;
+var NPA_OPTIONAL_PUNCT2 = phoneRecognizerFile.NPA_OPTIONAL_PUNCT2;
+
+var PhoneRegexFile = _dereq_('./phone-regex');
+var NPA_LEADING_ONE = PhoneRegexFile.NPA_LEADING_ONE;
+var NPA_OPTIONAL_PARAN = PhoneRegexFile.NPA_OPTIONAL_PARAN;
+var NPA_OPTIONAL_PUNCT1 = PhoneRegexFile.NPA_OPTIONAL_PUNCT1;
+var NPA_OPTIONAL_PUNCT2 = PhoneRegexFile.NPA_OPTIONAL_PUNCT2;
+
+var Mag = _dereq_('./mag').Mag;
+var CookieManager = _dereq_('./cookie-manager');
+
+function RewriteManager( phoneRequester ) {
+    this.guid = 0;
+    this.manualGuid = 0;
+
+    var batchSize = 10;
+    this.ctns = {};
+    this.phones = {};
+    this.manualCalls = {};
+    this.flagManager = new FlagManager();
+    this.phoneRequester = new phoneRequester( batchSize, this );
+
+    this.mag = new Mag(this.flagManager);
+    this.mag.requestInitialPixel();
+
+    this.cookieManager = CookieManager;
+}
+
+RewriteManager.prototype.RewriteResponse = function( gtns, e164Ctns, cookie ) {
+    for( var i = 0; i < gtns.length; i++ ) {
+        var guid = gtns[i].guid;
+        var ctn = gtns[i].ctn;
+
+        if( typeof this.manualCalls[guid] === 'function' ) {
+            var callback = this.manualCalls[guid];
+            callback( ctn );
+        } else {
+            this.applyCtns( guid, ctn );
+            this.storeCtn( ctn );
+        }
+    }
+
+    this.mag.requestPixelForPhoneNumbers( e164Ctns );
+    if( cookie ) {
+        this.cookieManager.setCookie( cookie.name, cookie.value, cookie.ttlHours );
+    }
+};
+
+RewriteManager.prototype.RequestSpecificNumbers = function( opts ) {
+    var numOnPage = stripPhoneNumber( opts.number );
+    var callBack = opts.callBack;
+    var guid = this.manualGuid;
+
+    this.manualCalls[guid] = callBack;
+    this.phoneRequester.manualRequest( guid, numOnPage, callBack );
+    this.manualGuid++;
+};
+
+RewriteManager.prototype.RewriteSpecificNumbers = function( numOnPage, ctn ) {
+    var callBack = this.manualCalls[numOnPage];
+    callBack( ctn );
+};
+
+RewriteManager.prototype.checkPhoneVisible = function() {
+    var j, guid, guids, element, strippedPhone;
+
+    for( strippedPhone in this.phones ) {
+        if (this.phones.hasOwnProperty(strippedPhone)) {
+            if(! this.phones[strippedPhone].requestedCtn ) {
+                guids = this.phones[strippedPhone].guids;
+                for( j = 0; j < guids.length; j++ ) {
+                    guid = guids[j];
+                    element = this[guid].node;
+                    if( this.isElementVisible(element)
+                     && this.isElementInVerticalViewport( element ) ) {
+                        this.phoneRequest( guid, strippedPhone );
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    this.phoneRequester.flush();
+};
+
+RewriteManager.prototype.storeCtn = function( ctn ) {
+    ctn = _trim(ctn);
+    this.ctns[ctn] = 1;
+    this.ctns[stripPhoneNumber(ctn)] = 1;
+};
+
+RewriteManager.prototype.isCtn = function( strippedPhone ) {
+    if( this.ctns.hasOwnProperty( strippedPhone ) ) {
+        return true;
+    }
+
+    return false;
+};
+
+RewriteManager.prototype.storePhoneNumber = function( phone, guidID ) {
+    phone = _trim(phone);
+    if( this.ctns.hasOwnProperty( phone ) ) {
+        return;
+    }
+
+    if (! this.phones.hasOwnProperty(phone) ) {
+        this.phones[phone] = {
+            guids: [guidID],
+            requestedCtn: false
+        };
+
+    } else {
+        this.phones[phone].guids.push( guidID );
+    }
+
+    return;
+};
+
+RewriteManager.prototype.applyCtns = function( guidID, ctn ) {
+    var strippedPhone, guid;
+    var strippedPhoneRecord;
+
+    if (this.hasOwnProperty(guidID) ) {
+        strippedPhone = this[guidID].strippedPhone;
+        if (this.phones.hasOwnProperty(strippedPhone) ) {
+            strippedPhoneRecord = this.phones[strippedPhone];
+            strippedPhoneRecord.ctn = ctn;
+            while( strippedPhoneRecord.guids.length > 0 ) {
+                guid = strippedPhoneRecord.guids.pop();
+                this.rewriteMcaNumber(guid, ctn);
+            }
+        }
+    }
+};
+
+RewriteManager.prototype.hasSeenCtn = function( phone ) {
+     if( ! this.phones.hasOwnProperty( phone ) ) {
+         return false;
+     }
+
+     return this.phones[phone].ctn;
+};
+
+RewriteManager.prototype.storeNode = function( node, regexName ) {
+    var recognizedPhones = _recognizePhones( node, regexName);
+    var storedPhones = [];
+    for(var i = 0; i < recognizedPhones.length; i++ ) {
+        this[this.guid] = recognizedPhones[i];
+        storedPhones.push( {
+            guid : this.guid,
+            phone : recognizedPhones[i]
+        } );
+        this.guid++;
+    }
+
+    return storedPhones;
+};
+
+RewriteManager.prototype.hasPhoneBeenRequested = function( strippedPhone ) {
+    var beenRequested = false;
+
+    if( this.phones[strippedPhone]
+        && this.phones[strippedPhone].requestedCtn
+    ) {
+        beenRequested = true;
+    }
+
+    return beenRequested;
+};
+
+RewriteManager.prototype.isElementVisible = function(el) {
+    if (el.hasOwnProperty("offsetWidth")
+      && el.hasOwnProperty("offsetHeight") ) {
+        return (el.offsetWidth > 0 && el.offsetHeight > 0 );
+    }
+    return true;
+};
+
+RewriteManager.prototype.isElementInVerticalViewport = function(el) {
+    var rect = _getBoundingClientRectOfElement(el);
+    var vHeight = 2 * (window.innerHeight || document.documentElement.clientHeight);
+    var rectBottom = rect.top;
+    var rectHeight = rect.height;
+
+    if( ! rect.height ) {
+        rectHeight = rect.bottom - rect.top;
+    }
+    if (rectHeight === 0) {
+        return false;
+    }
+    rectBottom += rectHeight;
+
+    return ( (rect.top <= vHeight && rectBottom >= 0)
+            || (rect.top >= 0 && rectBottom <= vHeight)
+            || (rect.top >= -1 * window.innerHeight && rectBottom <= 0) );
+};
+
+RewriteManager.prototype.rewriteMcaNumber = function( guid, ctn ) {
+    if( ! this.hasOwnProperty(guid) ) {
+        return;
+    }
+
+    var recognizedPhone = this[guid];
+
+    if( recognizedPhone.isNanpa() ) {
+        _rewriteNanpa( recognizedPhone, ctn );
+    } else if( recognizedPhone.isIntl() ) {
+        _rewriteDomNode( recognizedPhone, ctn );
+    } else if( recognizedPhone.isVanity() ) {
+        _rewriteVanity( recognizedPhone, ctn );
+    }
+};
+
+RewriteManager.prototype.phoneRequest = function( guid, strippedPhone ) {
+    if( guid < 0 ) {
+        return;
+    }
+
+    if( ! this.phones.hasOwnProperty( strippedPhone )
+        || this.phones[strippedPhone].requestedCtn ) {
+        return;
+    }
+
+    this.phones[strippedPhone].requestedCtn = true;
+    this.phoneRequester.enqueue( guid, strippedPhone );
+};
+
+RewriteManager.prototype.flush = function () {
+    this.phoneRequester.flush();
+};
+
+RewriteManager.prototype.finalFlush = function () {
+    this.phoneRequester.finalFlush();
+};
+
+function _rewriteNanpa( rewrittenPhone, ctn ) {
+    var replacementNumber = ctn;
+    var ctnStrippedPhone = getNanpaStrippedPhone( ctn );
+
+    if( ctnStrippedPhone ) {
+        replacementNumber = _copyNumberFormat( rewrittenPhone.matched, ctnStrippedPhone );
+    }
+    _rewriteDomNode( rewrittenPhone, replacementNumber );
+}
+
+function _getBoundingClientRectOfElement(el) {
+    if (el == null) {
+        return {top: 0,
+                left: 0,
+                bottom: (window.innerHeight || document.documentElement.clientHeight),
+                right: (window.innerWidth || document.documentElement.clientWidth) };
+    }
+
+    if (typeof el.getBoundingClientRect === 'function' ) {
+        return el.getBoundingClientRect();
+    }
+    return _getBoundingClientRectOfElement(el.parentNode );
+}
+
+function _recognizePhones( node, regexName ) {
+    return phoneRecognizer( node, regexName );
+}
+
+function _copyNumberFormat( strippedPhoneParts, strippedNanpaPhone ) {
+    var formattedNumber;
+    var npa = strippedNanpaPhone.substring(0,3);
+    var nxx = strippedNanpaPhone.substring(3,6);
+    var subscriber = strippedNanpaPhone.substring(6);
+
+    formattedNumber = [ '' ];
+    // see nanpa regex in phone-recognizer for details on parts
+    formattedNumber.push( strippedPhoneParts[NPA_LEADING_ONE]);
+    formattedNumber.push( strippedPhoneParts[NPA_OPTIONAL_PARAN]);
+    formattedNumber.push( npa );
+    formattedNumber.push( strippedPhoneParts[NPA_OPTIONAL_PUNCT1]);
+    formattedNumber.push( nxx);
+    formattedNumber.push( strippedPhoneParts[NPA_OPTIONAL_PUNCT2]);
+    formattedNumber.push( subscriber );
+
+    return formattedNumber.join('');
+}
+
+function _copyVanityNumberFormat( strippedVanityPhone ) {
+    var formattedNumber;
+    var npa = strippedVanityPhone.substring(0,3);
+    var nxx = strippedVanityPhone.substring(3,6);
+    var subscriber = strippedVanityPhone.substring(6);
+
+    formattedNumber = [ '' ];
+    // see nanpa regex in phone-recognizer for details on parts
+    formattedNumber.push( '1');
+    formattedNumber.push( '\u2011'); // non-breaking hyphen
+    formattedNumber.push( npa );
+    formattedNumber.push( '\u2011');
+    formattedNumber.push( nxx);
+    formattedNumber.push( '\u2011');
+    formattedNumber.push( subscriber );
+
+    return formattedNumber.join('');
+}
+
+function _escapeRegExp( str ) {
+    return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}
+
+function _rewriteDomNode( recognizedPhone, replacementNumber ) {
+    var domNode = recognizedPhone.node;
+    var formattedPhone = recognizedPhone.formattedPhone;
+    var replRegex = new RegExp( _escapeRegExp( formattedPhone ), "g" );
+
+    if( domNode.nodeName === 'TD' || domNode.nodeName === '#text' ) {
+        domNode.nodeValue = domNode.nodeValue.replace( replRegex, replacementNumber );
+    } else if( domNode.nodeName === 'A' ) {
+        domNode.href = domNode.href.replace( replRegex, replacementNumber );
+    }
+}
+
+function _rewriteVanity( recognizedPhone, ctn ) {
+    var replacementNumber = ctn;
+    var ctnStrippedPhone = getNanpaStrippedPhone( ctn );
+
+    if( ctnStrippedPhone ) {
+        replacementNumber = _copyVanityNumberFormat( ctnStrippedPhone );
+    }
+    _rewriteDomNode( recognizedPhone, replacementNumber );
+}
+
+function _trim(s) {
+    return s.replace(/^\s+|\s+$/g, '');
+}
+
+module.exports = {
+    RewriteManager: RewriteManager
+};
+
+},{"./cookie-manager":2,"./flag-manager":4,"./mag":9,"./phone-recognizer":11,"./phone-regex":12}],18:[function(_dereq_,module,exports){
+// Jshint suppress useless warnings
+/* global document:false */
+/* global window:false */
+
+var profile = _dereq_('./profile')
+, rewrite = _dereq_('./jsrw-rewriter')
+, util = _dereq_('./jsrw-util')
+;
+
+function main () {
+    if (typeof window.mchx === 'object') {
+        var orig = window.mchx.jsrwEvent;
+        window.mchx.jsrwEvent = function(ev, data) {
+            if (ev === 'rewrite-node-end') {
+                profile.showLog();
+            }
+            if (typeof orig === 'function') {
+                return orig(ev, data);
+            }
+        };
+    }
+
+
+    // JGP 7/20/2015
+    // if onload event has fired from jsrw v1 then we must check
+    // the readyState otherwise it will never fire (this is only
+    // an issue in old IE browsers)
+    if( document.readyState === 'complete' ) {
+        rewrite.rewriteNode(document);
+    } else {
+        util.addSafeEventListener(window, "load", function() {
+            rewrite.rewriteNode(document);
+        });
+    }
+}
+
+module.exports = {
+    main: main
+};
+
+},{"./jsrw-rewriter":6,"./jsrw-util":7,"./profile":14}],19:[function(_dereq_,module,exports){
+'use strict';
+
+//var recognizedPhone     = require( './recognized-phone' )
+//,   phoneType          = recognizedPhone.PhoneType
+//;
+var phoneType = {
+   NANPA : 'nanpa',
+   INTL : 'intl',
+   VANITY : 'vanity'
+};
+var NANPA_NAME = phoneType.NANPA;
+var INTL_NAME = phoneType.INTL;
+//var VANITY_NAME             = phoneType.VANITY;
+
+function ZoneControl( opts ) {
+    // TODO this code will need revision once we have replacements for _THE_ZONE_...
+    var classNames, classNamesLen, i;
+    if (opts.useIntl || opts.useIntlClass) {
+        this[INTL_NAME] = [];
+    } else {
+        this[NANPA_NAME] = [];
+    }
+    if (opts.vanity) {
+        // this[VANITY_NAME] = ['tmo_tfn_number'];
+        this[NANPA_NAME] = ['tmo_tfn_number'];
+    }
+    if (opts.useIntlClass ){
+        classNames = opts.useIntlClass.split( ' ' );
+        classNamesLen = classNames.length;
+        for( i = 0; i < classNamesLen; ++i ) {
+            this[INTL_NAME].push(classNames[i]);
+        }
+    }
+}
+
+module.exports = {
+    ZoneControl: ZoneControl
+};
+
+},{}]},{},[5]);

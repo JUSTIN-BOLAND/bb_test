@@ -1,0 +1,66 @@
+
+<!-- saved from url=(0156)https://di-tracker.herokuapp.com/tps?di_prop=e157ca33-a485-43ee-a543-e27dc3d10feb&dil=a7fd5c31-b48b-4c49-a636-b60c16a28752&ref=https://www.grapevinedcj.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>
+        var createCookie = function(name, value, days) {
+        var expires;
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toGMTString();
+        }
+        else {
+            expires = "";
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function getCookie(c_name) {
+        if (document.cookie.length > 0) {
+            c_start = document.cookie.indexOf(c_name + "=");
+            if (c_start != -1) {
+                c_start = c_start + c_name.length + 1;
+                c_end = document.cookie.indexOf(";", c_start);
+                if (c_end == -1) {
+                    c_end = document.cookie.length;
+                }
+                return unescape(document.cookie.substring(c_start, c_end));
+            }
+        }
+        return "";
+    }
+
+    function create_xhr(method, url) {
+      var xhr = new XMLHttpRequest();
+      if ("withCredentials" in xhr) {
+        xhr.open(method, url, true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      } else if (typeof XDomainRequest != "undefined") {
+        xhr = new XDomainRequest();
+        xhr.open(method, url);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      } else {
+        xhr = null;
+      }
+      return xhr;
+    }
+
+    function send_diti(diti) {
+      var xhr = create_xhr('POST', 'https://di-tracker.herokuapp.com/ditis?diti=' + diti +'&di_prop=e157ca33-a485-43ee-a543-e27dc3d10feb&dil=a7fd5c31-b48b-4c49-a636-b60c16a28752&referer=https://www.grapevinedcj.com/');
+      if (!xhr) {
+        return;
+      }
+
+      xhr.send();
+    }
+   
+      var diti = getCookie('diti')
+      if (!diti) {
+        diti = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+            return v.toString(16);
+        });
+        createCookie('diti',diti,3650)
+      }
+      send_diti(diti)
+    </script>
+    </head><body></body></html>

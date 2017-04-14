@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<!-- saved from url=(0218)http://panc.syndication.kbb.com/priceadvisornewcar/fairpurchaseprice?APIKey=d3cd501c-e6c3-4e83-a240-b34dccbb1e52&VIN=3FADP4AJ0GM207190&AskingPriceOverride=15242&DisplayMSRP=true&DisplayAskingPrice=true&DisplayFPP=false -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>New Car</title>
+    <script type="text/javascript" src="./event(2)"></script><script type="text/javascript">
+
+        var brightCoveJS = "http://admin.brightcove.com/js/BrightcoveExperiences.js";
+        if (window.location.protocol != 'http:') {
+            brightCoveJS = "https://sadmin.brightcove.com/js/BrightcoveExperiences.js";
+            //document.getElementById('consumerVideo').innerHTML += "<param name=\"secureConnections\" value=\"true\" />";
+            //document.getElementById('consumerVideo').innerHTML += "<param name=\"secureHTMLConnections\" value=\"true\" />";
+        }
+
+
+        var head = document.getElementsByTagName('head')[0];
+        var s = document.createElement('script');
+        s.src = brightCoveJS;
+        s.type = "text/javascript";
+        head.appendChild(s);
+
+	</script><script src="./BrightcoveExperiences.js" type="text/javascript"></script>
+
+
+    <script src="./jquery.min.js"></script>
+    
+    <link href="./Style(1)" rel="stylesheet">
+
+
+
+    <!--[if lt IE 9]>
+    <script src="/Content/PriceAdvisorNewCar/FairPurchasePrice/JS/market-meter-fc.debug.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="./css(2)">
+</head>
+<body onload="KBB.FireEvent(KBB.EventTypes.OnLoad)">
+        
+    <div id="newCarFairPurchasePriceLocation" class=" price-advisor" style="position: relative;"><div id="market-meter-interface-1" class="market-meter-inferface" style="display: block; height: 0px;"></div><canvas id="newCarFairPurchasePriceLocation_marketMeterCanvas" width="600" height="750" style="display: block; width: 300px; height: 375px;"></canvas>
+
+<style>
+    /* Begin CSS Reset */
+    
+    .kbb-synpa-new-car-dialog * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    
+    .kbb-synpa-new-car-dialog ol,
+    .kbb-synpa-new-car-dialog ul {
+        list-style: none;
+    }
+    
+    .kbb-synpa-new-car-dialog table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    /* End CSS Reset */
+    
+    .kbb-synpa-new-car-dialog {
+        position: absolute;
+        display: none;
+        z-index: 10000;
+        top: 20px;
+        left: 0px;
+        max-height: 375px;
+        max-width: 300px;
+    }
+    
+    .kbb-synpa-new-car-dialogContent {
+        background-color: white;
+        font-family: "Open Sans Regular", "Open Sans", Arial, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 12px;
+        line-height: normal;
+        margin: 5px;
+        padding: 10px;
+        overflow-y: auto;
+        width: 270px;
+        max-height: 305px;
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, .7);
+    }
+    
+    .kbb-synpa-new-car-header {
+        max-width: 253px;
+        margin-bottom: 8px;
+    }
+    
+    .kbb-synpa-new-car-header-title {
+        color: #434e59;
+        font-size: 18px;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+    
+    .kbb-synpa-new-car-title {
+        font-weight: 700;
+    }
+    
+    .kbb-synpa-new-car-definitions {
+        display: block;
+        overflow: auto;
+    }
+    
+    .kbb-synpa-new-car-definitions-group {
+        padding-bottom: 10px;
+    }
+    
+    .kbb-synpa-new-car-definitions-image {
+        width: 50px;
+        height: 50px;
+        float: left;
+        background-size: contain;
+    }
+    
+    .kbb-synpa-new-car-definitions-image-legacy {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .kbb-synpa-new-car-definitions-text {
+        max-width: 203px;
+        float: left;
+        margin-top: 17px;
+    }
+    
+    .kbb-synpa-new-car-consumerVideo {
+        width: 271px;
+        height: 201px;
+        margin-top: -9px;
+        margin-left: -9px;
+        margin-bottom: 10px;
+    }
+    
+    .kbb-synpa-new-car-dialogCloser {
+        background-repeat: no-repeat;
+        /*background-image: url("../assets/images/close.png");*/
+        background-position: 0px 0px;
+        position: relative;
+        margin-top: -14px;
+        margin-bottom: -14px;
+        margin-right: 0px;
+        float: right;
+        clear: none;
+        height: 28px;
+        width: 27px;
+        z-index: 1001;
+        cursor: pointer;
+    }
+    
+    .kbb-synpa-new-car-hover {
+        width: 100%;
+        max-width: 300px;
+        cursor: pointer;
+        display: none;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+    }
+    
+    .kbb-synpa-new-car-hover .background {
+        z-index: 1000;
+        color: #FFFFFF;
+        background-color: #000000;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }
+    
+    .kbb-synpa-new-car-hover div.button-and-text {
+        z-index: 2000;
+        top: 120px;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+    
+    .kbb-synpa-new-car-hover div.button-and-text div:nth-child(1) {
+        border-left: 76px solid #A0A0A0;
+        border-top: 36px solid transparent;
+        border-right: 0px solid transparent;
+        border-bottom: 36px solid transparent;
+        width: 0px;
+        height: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .kbb-synpa-new-car-hover div.button-and-text div:nth-child(2) {
+        border-left: 68px solid #E0E0E0;
+        border-top: 32px solid transparent;
+        border-right: 0px solid transparent;
+        border-bottom: 32px solid transparent;
+        width: 2px;
+        height: 0px;
+        margin-top: -68px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .kbb-synpa-new-car-hover div.button-and-text p {
+        font-size: 22pt;
+        text-shadow: -1px 0 #A0A0A0, 0 1px #A0A0A0, 1px 0 #A0A0A0, 0 -1px #A0A0A0;
+        text-align: center;
+        font-family: "Open Sans Regular", "Open Sans", Arial, sans-serif;
+        color: #E0E0E0;
+        margin-top: 18px;
+        font-weight: bold;
+    }
+    
+    .kbb-synpa-new-car-hover:hover div.button-and-text div:nth-child(2) {
+        border-left-color: #FFFFFF;
+    }
+    
+    .kbb-synpa-new-car-hover:hover div.button-and-text p {
+        color: #FFFFFF;
+    }
+</style>
+
+<!--[if lt IE 9]>
+	<style type="text/css">
+	    .kbb-synpa-new-car-dialogContent {
+	        filter:
+	              progid:DXImageTransform.Microsoft.Shadow(color=#888888,direction=0,strength=.1,opacity=0.30),
+	              progid:DXImageTransform.Microsoft.Shadow(color=#888888,direction=45,strength=2,opacity=0.30),
+	              progid:DXImageTransform.Microsoft.Shadow(color=#888888,direction=90,strength=6,opacity=0.30),
+	              progid:DXImageTransform.Microsoft.Shadow(color=#888888,direction=135,strength=4,opacity=0.30),
+	              progid:DXImageTransform.Microsoft.Shadow(color=#888888,direction=180,strength=6,opacity=0.30),
+	              progid:DXImageTransform.Microsoft.Shadow(color=#888888,direction=225,strength=2,opacity=0.30),
+	              progid:DXImageTransform.Microsoft.Shadow(color=#888888,direction=270,strength=.1,opacity=0.30),
+	              progid:DXImageTransform.Microsoft.Shadow(color=#888888,direction=315,strength=1,opacity=0.30);	
+	    }
+	</style>
+<![endif]-->
+
+<div class="kbb-synpa-new-car-dialog kbb-synpa-new-car-copyright">
+    <div style="margin-top: 30%">
+        <div class="kbb-synpa-new-car-dialogCloser" style="background-image: url(&quot;/Content/PriceAdvisorNewCar/FairPurchasePrice/Assets/Images/close.png&quot;);"></div>
+        <div class="kbb-synpa-new-car-dialogContent">
+            <p>© <span class="kbb-synpa-new-car-copyrightYear">2015-2017</span> Kelley Blue Book Co., Inc. All rights reserved. <span class="kbb-synpa-new-car-copyrightEditionText">3/3/2017-3/9/2017 Edition for 95136</span>. Kelley Blue Book assumes
+                no responsibility for errors or omissions. (<span class="kbb-synpa-new-car-copyrightPickCode">v.170301</span>).</p>
+        </div>
+    </div>
+</div>
+<div class="kbb-synpa-new-car-hover">
+    <div class="background"></div>
+    <div class="button-and-text">
+        <div></div>
+        <div></div>
+        <p>Play Video</p>
+    </div>
+</div>
+<div class="kbb-synpa-new-car-dialog kbb-synpa-new-car-pricingDefinitions" id="kbb-videoContainer">
+    <div>
+        <div class="kbb-synpa-new-car-dialogCloser" style="background-image: url(&quot;/Content/PriceAdvisorNewCar/FairPurchasePrice/Assets/Images/close.png&quot;);"></div>
+        <div class="kbb-synpa-new-car-dialogContent">
+            <div class="kbb-synpa-new-car-consumerVideo">
+                <!-- Start of Brightcove Player -->
+
+                <div style="display:none">
+                </div>
+                <!--
+                By use of this code snippet, I agree to the Brightcove Publisher T and C 
+                found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+                -->
+                <object id="consumerVideo" class="BrightcoveExperience">
+                    <param name="bgcolor" value="#FFFFFF">
+                    <param name="width" value="271">
+                    <param name="height" value="201">
+                    <param name="playerID" value="4377476773001">
+                    <param name="playerKey" value="AQ~~,AAAAAA36TT0~,gJXc4IwLf4ZjR0CP8y0Pk0SSQpx2KaOv">
+                    <param name="isVid" value="true">
+                    <param name="dynamicStreaming" value="true">
+                    <param name="wmode" value="transparent">
+                  <param name="videoId" value="4447482178001">
+                    <param name="includeAPI" value="true">
+                    <param name="templateLoadHandler" value="BCLS.onTemplateLoad">
+                    <param name="templateReadyHandler" value="BCLS.onTemplateReady">
+                    <param name="templateErrorHandler" value="BCLS.onTemplateError">
+                    <param name="htmlFallback" value="true">
+                    <param name="@videoPlayer" value="4447482178001">
+                </object>
+                
+
+                <!-- End of Brightcove Player -->
+            </div>
+
+         <div class="kbb-synpa-new-car-definitions-group">
+            <div class="kbb-synpa-new-car-header">
+                <p class="kbb-synpa-new-car-header-title">Definitions</p>
+                <p>Values and pricing are the opinions of Kelley Blue Book, and the actual price of a vehicle may vary.  Kelley Blue Book assumes no responsibility for errors or omissions.</p>
+            </div>
+            <div class="kbb-synpa-new-car-definitions kbb-synpa-new-car-fpp" style="display: none;">
+                <div class="kbb-synpa-new-car-definitions-image" style="background-image: url(&quot;/Content/PriceAdvisorNewCar/FairPurchasePrice/Assets/Images/FairPrice@2x.png&quot;);"></div>
+                <div class="kbb-synpa-new-car-definitions-text">
+                    <p class="kbb-synpa-new-car-title">Kelley Blue Book® Fair Purchase Price</p>
+                    <p>This Kelley Blue Book® Fair Purchase Price is based in part on the MSRP supplied by the dealer offering this vehicle for sale. Updated weekly, the Kelley Blue Book® Fair Purchase Price for new cars is generally the midpoint of the Fair Market Range. The Fair Purchase Price is Kelley Blue Book's estimate of what a consumer can reasonably expect to pay this week in this vehicle's area for a vehicle of the same year, make, model and MSRP, excluding taxes, title, fees and any available rebates or incentives. It's calculated based on the MSRP, actual new-car transactions, and data from other reliable third-party sources as well as market conditions. Each dealer sets and controls its own pricing.</p>
+                </div>
+            </div>
+            <div class="kbb-synpa-new-car-definitions kbb-synpa-new-car-fmr">
+                <div class="kbb-synpa-new-car-definitions-image" style="background-image: url(&quot;/Content/PriceAdvisorNewCar/FairPurchasePrice/Assets/Images/FMR@2x.png&quot;);"></div>
+                <div class="kbb-synpa-new-car-definitions-text">
+                    <p class="kbb-synpa-new-car-title">Fair Market Range (Buy from a Dealer)</p>
+                    <p>This Kelley Blue Book® Fair Market Range is based in part on the MSRP supplied by the dealer offering this vehicle for sale. Updated weekly the Kelley Blue Book® Fair Market Range for new cars is Kelley Blue Book's estimate of what a consumer can reasonably expect to pay this week in this vehicle's area for a vehicle of the same year, make, model and MSRP, excluding taxes, title, fees and any available rebates or incentives. Each dealer sets and controls its own pricing.</p>
+                </div>
+            </div>
+            <div class="kbb-synpa-new-car-definitions kbb-synpa-new-car-invoice" style="display: none;">
+                <div class="kbb-synpa-new-car-definitions-image" style="background-image: url(&quot;/Content/PriceAdvisorNewCar/FairPurchasePrice/Assets/Images/Invoice@2x.png&quot;);"></div>
+                <div class="kbb-synpa-new-car-definitions-text">
+                    <p class="kbb-synpa-new-car-title">Invoice</p>
+                    <p>The invoice is the price the manufacturer charges its dealers for a new vehicle. The invoice price includes destination charges, but doesn't include dealer advertising costs or costs for selling, preparing, displaying or financing the vehicle. Also, Kelley Blue Book prices include holdbacks and factory-to-dealer incentives which can lower the effective dealer cost in some cases.</p>
+                </div>
+            </div>
+            <div class="kbb-synpa-new-car-definitions kbb-synpa-new-car-msrp">
+                <div class="kbb-synpa-new-car-definitions-image" style="background-image: url(&quot;/Content/PriceAdvisorNewCar/FairPurchasePrice/Assets/Images/MSRP@2x.png&quot;);"></div>
+                <div class="kbb-synpa-new-car-definitions-text">
+                    <p class="kbb-synpa-new-car-title">MSRP</p>
+                    <p>The MSRP, or Manufacturer's Suggested Retail Price, shown here was supplied by the dealer offering this vehicle for sale. MSRP is the price set by the manufacturer and does not necessarily reflect the price actually paid by consumers. This MSRP excludes service and handling fees and state and local tax, title and license fees. Destination and freight charges may also be excluded.</p>
+                </div>
+            </div>
+            <div class="kbb-synpa-new-car-definitions kbb-synpa-new-car-redZone">
+                <div class="kbb-synpa-new-car-definitions-image" style="background-image: url(&quot;/Content/PriceAdvisorNewCar/FairPurchasePrice/Assets/Images/RZ@2x.png&quot;);"></div>
+                <div class="kbb-synpa-new-car-definitions-text">
+                    <p class="kbb-synpa-new-car-title">Red Zone (Buy from a Dealer)</p>
+                    <p>The red zone falls above the Fair Market Range. Special circumstances such as exceptionally low supply with high demand, options installed by the dealership, credit, and seasonality may all be contributing factors to sales that occur in this range.</p>
+                </div>
+            </div>
+            <div class="kbb-synpa-new-car-definitions kbb-synpa-new-car-whiteZone">
+                <div class="kbb-synpa-new-car-definitions-image" style="background-image: url(&quot;/Content/PriceAdvisorNewCar/FairPurchasePrice/Assets/Images/WZ@2x.png&quot;);"></div>
+                <div class="kbb-synpa-new-car-definitions-text">
+                    <p class="kbb-synpa-new-car-title">White Zone (Buy from a Dealer)</p>
+                    <p>The white zone falls below the Fair Market Range. Special circumstances such as retiring model years, unpopular color, excess inventory and seasonality may all be contributing factors to sales that occur in this range.</p>
+                </div>
+            </div>
+            <div class="kbb-synpa-new-car-definitions kbb-synpa-new-car-askingPrice-DISABLED" style="display:none">
+                <div class="kbb-synpa-new-car-definitions-image"></div>
+                <div class="kbb-synpa-new-car-definitions-text">
+                    <p class="kbb-synpa-new-car-title">Dealer Asking Price</p>
+                    <p>Dealer Asking Price is the price this dealer is asking for the car, not including rebates or incentives.</p>
+                </div>
+            </div>
+            <div class="kbb-synpa-new-car-definitions kbb-synpa-new-car-transactionData">
+                <div class="kbb-synpa-new-car-definitions-image"></div>
+                <div class="kbb-synpa-new-car-definitions-text">
+                    <p class="kbb-synpa-new-car-title">Transaction Data</p>
+                    <p>This meter represents a sample range of recent transaction prices for vehicles of the same year, make and model as the vehicle specified, but sometimes with a different style and/or equipment. Analyzed transaction prices exclude taxes, DMV fees, documentation fees, other dealership charges and any available rebates or incentives.</p>
+                </div>
+            </div>
+            <div class="kbb-synpa-new-car-header">
+                <p class="kbb-synpa-new-car-header-title">&nbsp;</p>
+                <p>© <span class="kbb-synpa-new-car-copyrightYear">2015-2017</span> Kelley Blue Book Co., Inc. All rights reserved.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="kbb-synpa-new-car-dialog kbb-synpa-new-car-invoicePriceUnavailable">
+    <div style="margin-top: 30%">
+        <div class="kbb-synpa-new-car-dialogCloser" style="background-image: url(&quot;/Content/PriceAdvisorNewCar/FairPurchasePrice/Assets/Images/close.png&quot;);"></div>
+        <div class="kbb-synpa-new-car-dialogContent">
+            <p class="kbb-synpa-new-car-title">Invoice Currently Unavailable</p>
+            <p>The absence of manufacturer-provided invoice pricing information has caused a delay in offering this information to you.</p>
+        </div>
+    </div>
+</div>
+<div class="kbb-synpa-new-car-dialog kbb-synpa-new-car-fairPurchasePriceUnavailable">
+    <div style="margin-top: 30%">
+        <div class="kbb-synpa-new-car-dialogCloser" style="background-image: url(&quot;/Content/PriceAdvisorNewCar/FairPurchasePrice/Assets/Images/close.png&quot;);"></div>
+        <div class="kbb-synpa-new-car-dialogContent">
+            <p class="kbb-synpa-new-car-title">Why Don't I See a Fair Purchase Price?</p>
+            <p>That depends.&nbsp; Since Kelley Blue Book bases Fair Purchase Price on actual transactions, some vehicles are too new to establish a history, others have low current dealer inventory, and still others have low sales volume overall.</p>
+            <p>For these reasons, some additional info may be unavailable as well.</p>
+        </div>
+    </div>
+</div></div>
+    
+    <script src="./Script(1)"></script>
+
+    <script type="text/javascript">
+        <!--
+        $(document).ready(function () {
+            KBB.PriceAdvisorNewCar.FairPurchasePrice.Render(
+                'newCarFairPurchasePriceLocation',
+                'APIKey=d3cd501c-e6c3-4e83-a240-b34dccbb1e52&VIN=3FADP4AJ0GM207190&AskingPriceOverride=15242&DisplayMSRP=true&DisplayAskingPrice=true&DisplayFPP=false',
+                dataFn
+            );
+        });
+
+        function dataFn(data) {
+            KBB.DataLayer = data;
+            KBB.DataLayer.WidgetIdentifier = KBB.WidgetIdentifiers.panc_fairpurchaseprice;
+            KBB.FireEvent(KBB.EventTypes.OnDataLoad);
+            if (!data.success)
+                return;
+            
+            /* SiteCatalyst code version: H.25.2. */
+            
+            var s_account = data.obsolete_Omniture.account; // suite_ID sent to Omniture
+            var s = s_gi(s_account);
+
+            s.charSet = "ISO-8859-1";
+            /* Conversion Config */
+            s.currencyCode = "USD";
+            /* Link Tracking Config */
+            s.trackDownloadLinks = true;
+            s.trackExternalLinks = true;
+            s.trackInlineStats = true;
+            s.linkDownloadFileTypes = "exe,zip,wav,mp3,mov,mpg,avi,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx";
+            s.linkInternalFilters = "javascript:,kbb.com,209.67.183.,64.15.170.";
+            s.linkLeaveQueryString = false;
+            s.linkTrackVars = "None";
+            s.linkTrackEvents = "None";
+            s.trackingServer = "metrics.kbb.com";
+            s.trackingServerSecure = "smetrics.kbb.com";
+            //s.trackingServer = "kelleybluebook.112.2o7.net";
+
+            s.pageName = "syn" + KBB.DataLayer.WidgetIdentifier.Key;
+            s.server = data.server; // SCname
+            s.channel = "synpa"; // Section
+            s.zip = data.zip; // Zip Code
+            s.state = data.state; // State
+            s.campaign = ""; // campaign ID
+
+            s.events = ""; // event name        populated on page
+            s.eVar1 = ""; // TypeOfReport
+            s.eVar2 = ""; // Partner name      populated on page
+            s.products = ""; // Partner Logo list populated on page
+            s.purchaseID = ""; // unique Purchase ID populated on page
+            s.prop1 = "ind-syn"; // Super Section
+            s.prop2 = s.pageName; // Detailed Page Name
+            s.prop3 = ""; // Category
+            s.prop4 = data.year; // Year
+            s.prop5 = ""; // Make
+            s.prop6 = ""; // Make Model
+            s.prop7 = ""; // Make Model Trim
+            s.prop8 = ""; // Year Make
+            s.prop9 = ""; // Year make Model
+            s.prop10 = ""; // Year Make Model Trim
+            s.prop11 = ""; // Price Range
+            s.prop12 = data.zip; // Zip Code
+            s.prop13 = data.state; // State
+            s.prop14 = ""; // County Code
+            s.prop15 = ""; // TypeOfTargeting
+            s.prop16 = ""; // TypeOfReport
+            s.prop17 = ""; // TypeOfCompetitiveSet
+            s.prop18 = ""; // Link Description     populated on page
+            s.prop19 = ""; // Control Mode
+            s.prop20 = data.apiKey; // cmPartner_ID - control mode partner
+            s.prop21 = ""; // Log Number
+            s.prop22 = ""; // tab section
+            s.prop23 = ""; // vehicle condition
+            s.prop25 = ""; // excludes pageView if set, only counts partnerView
+
+            s.prop26 = data.makeId; // Make ID
+            s.prop27 = data.modelId; // Model ID
+            s.prop28 = data.vehicleId; // Vehicle ID
+            
+            s.prop35 = data.vin; // VIN
+            s.prop36 = data.obsolete_Omniture.fppRange; // FPP Range
+            s.prop57 = data.obsolete_Omniture.configuredPrice; // Configured Price            
+
+            s.referrer = 'http://www.capitolford.com/inventory/new-2016-ford-fiesta-s-fwd-4d-sedan-3fadp4aj0gm207190';
+
+            s.usePlugins = true;
+            s.doPlugins = s_doPlugins;
+            
+            /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+            var s_code = s.t();
+
+            if (s_code)
+                document.write(s_code);
+        }
+    //-->        
+    </script>
+    <script type="text/javascript">
+    <!--
+        if (navigator.appVersion.indexOf('MSIE') >= 0)
+            document.write(unescape('%3C') + '\!-' + '-');
+        //-->
+    </script>
+    <noscript>&lt;img src="//kelleybluebook.112.2o7.net/b/ss/kbbcmglobal/1/H.25.2--NS/0" height="1" width="1" border="0" alt="" /&gt;</noscript><!--/DO NOT REMOVE/-->
+    <!-- End SiteCatalyst code version: H.25.2. -->
+
+
+
+<iframe id="destination_publishing_iframe_cam_124" src="./dest5(2).html" style="display: none; width: 0px; height: 0px;" class="aamIframeLoaded"></iframe></body></html>

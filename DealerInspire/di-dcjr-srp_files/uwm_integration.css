@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+.uwm-disabled{
+	display: none;
+}
+.uwm-enabled{
+	cursor:pointer;	
+}
+
+.uwm-enabled:not(.uwm-has-contents){
+	background-image: url('//www.dealervideos.com/css/fdIcons/default.png');
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 54px;
+	cursor:pointer;
+	background-size: cover;
+	display: inline-block;
+}
+/**/
+
+#unityworks_modal{
+	line-height: 0;
+}
+
+#unityworks_modal_overlay{
+	background: rgba(0,0,0,.5);
+	opacity: 0!important;
+	-webkit-transition: opacity 250ms cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+	   -moz-transition: opacity 250ms cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+	     -o-transition: opacity 250ms cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+	        transition: opacity 250ms cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+
+	-webkit-transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+	   -moz-transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+	     -o-transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+	        transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+}
+
+#unityworks_modal_overlay.unityworks_anim_in{
+	opacity: 1!important;
+}
+
+#unityworks_modal_container.unityworks_anim_in {
+	position: absolute !important;
+}
+
+#unityworks_modal_x{
+	text-shadow: 1.5px .5px 0px #000;
+}
+
+#unityworks_modal_aspect_bg{
+
+}
+
+@media (min-width: 786px) {
+	#unityworks_modal{
+		margin: 25px auto 0;
+	}
+}
+
+
+/* Mobile */
+
+@media (max-width: 500px) {
+	#unityworks_modal{
+		margin:  0;
+	}
+	
+	#unityworks_modal{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	}
+
+	#unityworks_modal_container.unityworks_anim_in {
+		position: absolute !important;
+	}
+}
+

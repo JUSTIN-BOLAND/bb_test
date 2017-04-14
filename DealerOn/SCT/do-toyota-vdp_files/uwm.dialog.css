@@ -1,0 +1,92 @@
+/* This file skins dialog */
+
+.uwmDialogClass object,
+.uwmDialogClass embed{
+	display:inline;
+}
+
+.uwmDialogClass .ui-dialog,
+.uwmDialogClass.ui-dialog{
+	background-color: #eaeaea;
+	/*background: url(i/transparent_default.png) repeat-x;*/
+	border: 1px solid #6b6b6b;
+	cursor: default;
+}
+
+/* Overlays */
+.uwmDialogClass .ui-dialog .ui-widget-overlay, 
+.uwmDialogClass .ui-dialog .ui-dialog-overlay,
+.ui-dialog-overlay{background: #000000 url(i/ui-bg_diagonals-small_20_404040_40x40.png) 50% 50% repeat; opacity: .80;filter:Alpha(Opacity=80);}
+
+.uwmDialogClass .ui-dialog .ui-dialog-titlebar,
+.uwmDialogClass.ui-dialog .ui-dialog-titlebar{
+	border-bottom: 1px solid #6b6b6b;
+	background: #bcc9cf url(i/background_default.png) repeat-x;
+	padding: 0px;
+	height: 28px;
+	_height: 29px;
+}
+
+.uwmDialogClass .ui-dialog.ui-draggable .ui-dialog-titlebar,
+.uwmDialogClass.ui-dialog.ui-draggable .ui-dialog-titlebar{
+	font-family:Verdana,Geneva,Arial,sans-serif;
+	color:#333333;
+	font-size: 10px;
+	
+	cursor: move;
+}
+
+.uwmDialogClass .ui-dialog .ui-dialog-titlebar-close,
+.uwmDialogClass.ui-dialog .ui-dialog-titlebar-close{
+	width: 23px;
+	height: 22px;
+	background: url(i/close_icon_default.png) no-repeat;
+	border: 0px;
+	position:absolute;
+	top: 3px;
+	right: 7px;
+	cursor: pointer;
+}
+
+.uwmDialogClass .ui-dialog .ui-dialog-titlebar-close span,
+.uwmDialogClass.ui-dialog .ui-dialog-titlebar-close span{
+	border: 0px;
+	display: none;
+}
+
+.uwmDialogClass .ui-dialog .ui-dialog-titlebar-close-hover,
+.uwmDialogClass.ui-dialog .ui-dialog-titlebar-close-hover{
+	background: url(i/close_icon_default.png) no-repeat;
+}
+
+.uwmDialogClass .ui-dialog .ui-dialog-title,
+.uwmDialogClass.ui-dialog .ui-dialog-title{
+	margin-left: 5px;
+	color: white;
+	font-weight: bold;
+	color: #333333;
+	position: relative;
+	top: 7px;
+	left: 4px;
+}
+
+.uwmDialogClass .ui-dialog .ui-dialog-content,
+.uwmDialogClass.ui-dialog .ui-dialog-content{
+	position: relative;
+	margin-left: 4px;
+	top: 11px;
+}
+
+.uwmDialogClass .ui-dialog .ui-dialog-buttonpane,
+.uwmDialogClass.ui-dialog .ui-dialog-buttonpane{
+	position: absolute;
+	bottom: 8px;
+	right: 12px;
+	width: 100%;
+	text-align: right;
+}
+
+.uwmDialogClass .ui-dialog .ui-dialog-buttonpane button,
+.uwmDialogClass.ui-dialog .ui-dialog-buttonpane button{
+	margin: 6px;
+}

@@ -1,0 +1,680 @@
+.caoBusinessCardCouponAreaStyle{
+	position:absolute;
+	top:0;
+	right:0;
+	background-color:black;
+	width: 200px;
+	height: 210px;
+}
+.caoBusinessCardMTCNumberTextArea{
+	position:absolute;
+	top:210px;
+	left:230px;
+	width:200px;
+	height:40px;
+}
+
+.caoBusinessCardMTCNumberTextStyle{
+	position:absolute;
+	top:12px;
+	left:-2px;
+	width:200px;
+	font-family:Myriad Pro, Arial, sans-serif;
+	color:white; font-weight:semibold;
+	font-size:14px;
+	text-align:center;
+	font-variant:none;
+	font-style:normal;
+}
+
+.caoBusinessCardMinimized{
+	position:absolute;
+	top:0;
+	left:0;
+	height:60px;
+	width:430px;
+}
+.caoBusinessCardMinBg{
+	position:absolute;
+	top:0;
+	right:0;
+	width:230px;
+	height:60px;
+	background-color:black;
+}
+
+.caoBusinessCardMinChatBttnContainer{
+	position:absolute;
+	top:0;
+	left:215px;
+	height:60px;
+	width:215px;
+	background-color:transparent;
+}
+.caoBusinessCardMinChatOnlyBttnContainer{
+	position:absolute;
+	top:0;
+	right:0;
+	height:60px;
+	width:230px;
+	background-color:transparent;
+}
+.caoBusinessCardMinChatBttnContent{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-image:url(//cdn.contactatonce.com/dropin/CAOBRSlideUp_Min_ChatButton_SalesSpecific_Red.png);
+	background-size:contain;
+	background-position:center center;
+	background-repeat: no-repeat;
+}
+
+.caoBusinessCardMinTextBttnContainer{
+	position:absolute;
+	top:0;
+	left:0px;
+	height:60px;
+	width:215px;
+	background-color:#df0000;
+}
+.caoBusinessCardMinTextBttnContent{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-image:url(//cdn.contactatonce.com/dropin/CAOBRSlideUp_Min_TextButton_SalesSpecific_Black.png);
+	background-size:contain;
+	background-position:center center;
+	background-repeat: no-repeat;
+}
+
+.caoBusinessCardContainerStyle {
+	position: absolute;
+	top:0;
+	left:0;
+	border: 0;
+	width:100%;
+	height:100%;
+	background-color:transparent;
+	opacity:1;
+	z-index:10000;
+}
+
+.caoBusinessCardContainerNoCouponStyle{
+	position: absolute;
+	top:0;
+	right:0;
+	border: 0;
+	width:230px;
+	height:100%;
+	background-color:transparent;
+	opacity:1;
+	z-index:10000;	
+}
+
+.caoBusinessCardFullBGStyle {
+	position: absolute;
+	top:0;
+	left:0;
+	border: 0;
+	width:100%;
+	height:100%;
+	background-color:#df0000;
+	opacity:1;
+	border-radius:0;
+	z-index:1000;
+}
+
+.caoBusinessCardFullBGNoCouponStyle{
+	position: absolute;
+	top:0;
+	right:0;
+	border: 0;
+	width:230px;
+	height:100%;
+	background-color:#df0000;
+	opacity:1;
+	border-radius:0;
+	z-index:1000;	
+}
+
+.caoBusinessCardStateAreaStyle{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:transparent;
+	z-index:10042;	
+}
+
+.caoAgentImageAreaStyle{
+	position:absolute;
+	width:110px;
+	height:110px;
+	top:13px;
+	left:60px;
+	z-index:10008;
+	border-radius:100%;
+	box-shadow: 0px 0px 5px black;
+}
+
+.caoBusinessCardActionButtonsStyle{
+	position:absolute;
+	top:167px;
+	left:30px;
+	height:70px;
+	width:170px;
+}
+
+.caoBusinessCardChatAreaStyle{
+	position:absolute;
+	width:170px;
+	height:30px;
+	left:0;
+	top:0;
+}
+
+.caoBusinessCardChatOnlyAreaStyle{
+	position:absolute;
+	width:64%;
+	height:100%;
+	left:5%;
+	top:10%;	
+}
+
+.caoBusinessCardMtcAreaStyle{
+	position:absolute;
+	width:170px;
+	height:30px;
+	left:0;
+	top:40px;
+}
+
+.caoBusinessCardCallAreaStyle{
+	position:absolute;
+	width:25%;
+	max-width:66px;
+	height:auto;
+	right:5%;
+	top:10%;
+}
+
+.caoBusinessCardActionAreaStyle{
+	position:absolute;
+	width:100%;
+	padding-bottom:100%;
+	left:0;
+	top:0;
+	z-index:10008;
+}
+
+.caoBusinessCardActionAreaChatOnly{
+	position:absolute;
+	width:100%;
+	height:70%;
+	left:0;
+	top:0;
+	z-index:10008;
+}
+
+.caoBusinessCardMinimizeAreaStyle{
+	position:absolute;
+	top:2%;
+	right:1%;
+	width:4%;
+	max-width:25px;
+	height:auto;
+}
+
+.caoBusinessCardMinimizeAreaNoCouponStyle{
+	position:absolute;
+	top:2%;
+	right:2%;
+	width:8%;
+	max-width:25px;
+	height:auto;	
+}
+
+.caoBusinessCardMaximizeAreaStyle{
+	position:absolute;
+	top:6%;
+	right:1%;
+	width:3%;
+	max-width:25px;
+	height:auto;
+}
+
+.caoBusinessCardStateButtonStyle{
+	position:absolute;
+	width:100%;
+	padding-bottom:100%;
+	left:0;
+	top:0;
+	z-index:10008;
+	background-image:url(//cdn.contactatonce.com/dropin/CAOConnectionCard_MinimizeArrowIcon.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:contain;
+}
+
+.caoBusinessCardMinStateButtonStyle{
+	position:absolute;
+	width:100%;
+	padding-bottom:100%;
+	left:0;
+	top:0;
+	z-index:10008;
+	background-image:url(//cdn.contactatonce.com/dropin/CAOConnectionCard_MaximizeArrowIcon.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:contain;
+}
+
+.caoSpacerStyle{
+	background-color:black;
+	width:90px;
+	height:10px;
+	background-color:black;
+	opacity:0.75;
+	z-index:999;
+}
+
+.caoSpacerMobileStyle{
+	position:absolute;
+	background-color:black;
+	width:100%;
+	height:100%;
+	background-color:black;
+	opacity:0.75;
+	z-index:999;
+}
+
+.caoTopBorderStyle{
+	position:absolute;
+	background-color:black;
+	width:90px;
+	height:10px;
+	background-color:black;
+	opacity:0.75;
+	border-top-left-radius:15px;
+	z-index:999;
+}
+
+.caoBottomBorderStyle{
+	position:absolute;
+	background-color:black;
+	width:90px;
+	height:10px;
+	background-color:black;
+	opacity:0.75;
+	border-bottom-left-radius:15px;
+	z-index:999;
+}
+
+.caoleftBorderStyle{
+	position:absolute;
+	background-color:black;
+	width:100%;
+	height:100%;
+	background-color:black;
+	opacity:0.75;
+	border-top-left-radius:15px;
+	z-index:999;
+}
+
+.caoLeftBorderStyle{
+	position:absolute;
+	background-color:black;
+	width:100%;
+	height:100%;
+	background-color:black;
+	opacity:0.75;
+	border-top-left-radius:15px;
+	z-index:999;
+}
+
+.caoBackgroundStyle{
+	background-color:black;
+	opacity:0.75;
+	width:90px;
+	height:70px;
+	z-index:9000;
+}
+
+.caoDecoSquareStyle{
+	position:absolute;
+	top:0;
+	left: 0;
+	display:block;
+	width:170px;
+	height:30px;
+	border: 0;
+	border-radius: 0;
+	z-index:10001;
+	border: 0;
+	background-color:black;
+	border-top-left-radius:15px;
+	border-bottom-left-radius:15px;
+}
+
+
+.caoActionSquare{
+	position:absolute;
+	top:0;
+	left:0;
+	width: 170px;
+	height: 30px;
+	z-index:10004;	
+}
+
+.caoDecoSquareChatOnly{
+	position:absolute;
+	left: 0;
+	display:block;
+	width:100%;
+	height:100%;
+	border: 0;
+	border-radius: 10px;
+	z-index:10001;
+	border: 2px solid #686868 !important;
+}
+
+.caoDecoSquareChatOnly:hover{
+	background-color: #686868;
+	opacity:1 !important;
+}
+
+.caoActionSquareChatOnly{
+	position:absolute;
+	top:20%;
+	left:20%;
+	width: 60%;
+	height: 60%;
+	z-index:10004;	
+}
+
+.caoAgentImageContainerStyle{
+	position:absolute;
+	display:block;
+	background-color:transparent;
+	width:100%;
+	height:100%;
+	border: 0;
+	z-index:10003;
+	opacity:1 !important;
+}
+
+.caoAgentImageStyle{
+	border:0;
+	width: 100%;
+	height:100%;
+	margin: 0 auto;
+	border-radius:100%;
+	z-index:10002;
+}
+.caoBusinessCardTextContainerStyle{
+	position:absolute;
+	top:130px;
+	left: 30px;
+	width:170px;
+	height:30px;
+	font-size:24px;
+	text-align: center;
+}
+
+.caoBusinessCardTextStyle{
+	font-family: Myriad Pro, Arial, sans-serif;
+	color: white;
+	font-weight: semibold;
+	text-decoration: none;
+	font-style:normal;
+	position:absolute;
+	top: 0;
+	height:100%;
+	width:100%;
+	line-height:normal;
+}
+#caoBusinessCardTextLine1{
+	color:white;
+}
+
+
+.caoChatOnline{
+	background-image:url(//cdn.contactatonce.com/dropin/CAOBRSlideUp_Max_ChatButton_SalesSpecific.png);
+	background-repeat:no-repeat;
+	background-position: left;
+	background-size: contain;
+	z-index:10002;
+	background-color:transparent;
+	width:100%;
+	height:100%;
+	opacity:1 !important
+}
+
+.caoChatOffline{
+	background-image:url(//cdn.contactatonce.com/dropin/CAOConnectionCard_MessageIcon.png);
+	background-repeat:no-repeat;
+	background-position: left;
+	background-size: contain;
+	z-index:10002;
+}
+
+.caoMTCStyle{
+	background-image:url(//cdn.contactatonce.com/dropin/CAOBRSlideUp_Max_TextButton_SalesSpecific.png);
+	background-repeat:no-repeat;
+	background-position: left;
+	background-size: contain;
+	z-index:10002;
+}
+
+.caoCallStyle{
+	background-image:url(//cdn.contactatonce.com/dropin/CAOConnectionCard_PhoneIcon.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+	background-size: contain;
+	z-index:10002;
+}
+
+.caoDecoSquareStyleMobile{
+	position:absolute;
+	left: 0;
+	display:block;
+	width:100%;
+	height:100%;
+	border: 0;
+	border-radius: 0;
+	z-index:10001;
+}
+
+.caoDecoSquareStyleOnlineMobile{
+	position:absolute;
+	left: 0;
+	display:block;
+	width:100%;
+	height:100%;
+	border: 0;
+	border-radius: 0;
+	z-index:10001;
+}
+
+.caoActionSquareMobile{
+	position:absolute;
+	top:20%;
+	left:20%;
+	width: 60%;
+	height: 60%;
+	z-index:10004;	
+}
+
+.caoAgentImageContainerStyleMobile{
+	position:absolute;
+	display:block;
+	background-color:transparent;
+	width:100%;
+	height:100%;
+	border: 0;
+	z-index:10003;
+	opacity:1 !important;
+}
+
+.caoAgentImageStyleMobile{
+	border:0;
+	width: 100%;
+	height:100%;
+	margin: 0 auto;
+	border-radius:0;
+	z-index:10002;
+}
+
+.caoChatOnlineMobile{
+
+	background-image:url(//cdn.contactatonce.com/dropin/CAOBRSlideUp_Min_ChatButton_SalesSpecific_Red.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+	background-size: contain;
+	z-index:10002;
+	background-color:transparent;
+	width:100%;
+	height:100%;
+	opacity:1 !important;
+}
+
+.caoChatOnlineTextMobile{
+	text-align: center;
+	font-family: Helvetica, Arial, sans-serif;
+	color: white;
+	font-weight:500;
+	font-size:18px;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: none;
+	text-decoration: none !important;
+	z-index:10002;
+	background-color:transparent;
+	width:100%;
+	height:100%;
+	opacity:1 !important;
+}
+
+.caoChatOfflineMobile{
+	background-image:url(//cdn.contactatonce.com/dropin/CAOConnectionCard_MessageIcon.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+	z-index:10002;
+	background-color:transparent;
+	width:100%;
+	height:100%;
+	opacity:1 !important;
+}
+
+.caoMTCStyleMobile{
+	background-image:url(//cdn.contactatonce.com/dropin/CAOBRSlideUp_Min_TextButton_SalesSpecific_Black.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+	background-size: contain;
+	z-index:10002;
+	background-color:transparent;
+	width:100%;
+	height:100%;
+	opacity:1 !important;
+}
+
+.caoCallStyleMobile{
+	background-image:url(//cdn.contactatonce.com/dropin/CAOConnectionCard_PhoneIcon.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+	background-size: contain;
+	z-index:10002;
+	background-color:transparent;
+	width:100%;
+	height:100%;
+	opacity:1 !important;
+}
+
+.caoMobileRibbonBackgroundStyle{
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	z-index:10000;
+	background-color:#686868;
+	opacity:0.75;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+
+.caoBusinessCardMobileRibbon{
+	width:100%;
+	height:100%;
+	background-color:black;
+}
+.caoBusinessCardMobileAgentImage{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:13%;
+	height:auto;
+}
+.caoBusinessCardMobileMtcArea{
+	position:absolute;
+	top: 0;
+	left: 13%;
+	width:43.5%;
+	height:60px;
+	background-color:#df0000;
+}
+.caoBusinessCardMobileMtcOnlyArea{
+	position:absolute;
+	top: 0;
+	left: 0;
+	width:100%;
+	height:60px;
+	background-color:#df0000;
+}
+.caoBusinessCardMobileChatArea{
+	position:absolute;
+	top: 0;
+	right:0;
+	width:43.5%;
+	height:60px;
+	background-color:#00000;
+}
+.caoBusinessCardMobileChatOnlyArea{
+	position:absolute;
+	top: 0;
+	right:0;
+	width:87%;
+	height:60px;
+	background-color:#00000;
+}
+
+.caoBusinessCardMobileMtcAreaNoImg{
+	position:absolute;
+	top: 0;
+	left: 0;
+	width:50%;
+	height:60px;
+	background-color:#df0000;
+	
+}
+.caoBusinessCardMobileChatAreaNoImg{
+	position:absolute;
+	top: 0;
+	right:0;
+	width:50%;
+	height:60px;
+	background-color:#00000;	
+}
+.caoBusinessCardMobileChatOnlyAreaNoImg{
+	position:absolute;
+	top: 0;
+	right:0;
+	width:100%;
+	height:60px;
+	background-color:#00000;	
+}
